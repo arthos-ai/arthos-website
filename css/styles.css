@@ -1,0 +1,127 @@
+/* Custom styles for Arthos.ai website */
+/* This file contains optional overrides for Tailwind CSS */
+
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Custom button hover effects */
+.btn-primary {
+    @apply bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold transition duration-300;
+}
+
+.btn-primary:hover {
+    @apply bg-blue-700 transform scale-105;
+}
+
+/* Custom form focus styles */
+.form-input {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200;
+}
+
+/* Custom gradient backgrounds */
+.gradient-primary {
+    background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+}
+
+.gradient-secondary {
+    background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
+}
+
+/* Custom spacing utilities */
+.section-padding {
+    @apply py-20;
+}
+
+.container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+}
+
+/* Custom typography */
+.heading-primary {
+    @apply text-4xl md:text-6xl font-bold;
+}
+
+.heading-secondary {
+    @apply text-3xl md:text-4xl font-bold;
+}
+
+.text-lead {
+    @apply text-xl md:text-2xl;
+}
+
+/* Custom card styles */
+.card {
+    @apply bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300;
+}
+
+.card:hover {
+    @apply transform -translate-y-1;
+}
+
+/* Custom icon container styles */
+.icon-container {
+    @apply w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4;
+}
+
+.icon-container.blue {
+    @apply bg-blue-100;
+}
+
+.icon-container.green {
+    @apply bg-green-100;
+}
+
+.icon-container.purple {
+    @apply bg-purple-100;
+}
+
+/* Custom navigation styles */
+.nav-link {
+    @apply text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition duration-200;
+}
+
+.nav-link:hover {
+    @apply bg-gray-100;
+}
+
+/* Custom footer styles */
+.footer-text {
+    @apply text-gray-400 mb-4;
+}
+
+.footer-subtext {
+    @apply text-sm text-gray-500;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+    .heading-primary {
+        @apply text-3xl;
+    }
+    
+    .heading-secondary {
+        @apply text-2xl;
+    }
+    
+    .text-lead {
+        @apply text-lg;
+    }
+}

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- TODO: Replace Formspree endpoint in the contact form with your actual endpoint -->
+    <!-- TODO: Add og.png to assets folder for social media previews -->
+    
+    <title>Arthos AI - AI Infrastructure for Automated Workflows</title>
+    <meta name="description" content="AI infrastructure to ground automated workflows in consistent context. Transform your business with intelligent automation solutions.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Arthos AI - AI Infrastructure for Automated Workflows">
+    <meta property="og:description" content="AI infrastructure to ground automated workflows in consistent context. Transform your business with intelligent automation solutions.">
+    <meta property="og:image" content="./assets/og.png">
+    <meta property="og:url" content="https://arthos.ai">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Arthos AI - AI Infrastructure for Automated Workflows">
+    <meta name="twitter:description" content="AI infrastructure to ground automated workflows in consistent context.">
+    <meta name="twitter:image" content="./assets/og.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+    
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Font - Armata -->
+    <link href="https://fonts.googleapis.com/css2?family=Armata&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS Variables and Styles -->
+    <style>
+        :root {
+            --bg: #1E1B18;
+            --text: #E1E7EF;
+            --accent: #6FA5C3;
+            --card: #2C2825;
+        }
+        
+        * {
+            font-family: 'Armata', sans-serif;
+        }
+        
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+        }
+        
+        .bg-primary { background-color: var(--bg); }
+        .bg-card { background-color: var(--card); }
+        .text-primary { color: var(--text); }
+        .text-accent { color: var(--accent); }
+        .border-accent { border-color: var(--accent); }
+        .bg-accent { background-color: var(--accent); }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Card hover effects */
+        .hover-lift {
+            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Button hover effects */
+        .btn-primary {
+            background-color: var(--accent);
+            transition: opacity 0.2s ease-out, transform 0.1s ease-out;
+        }
+        
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+        
+        .btn-primary:active {
+            transform: scale(0.98);
+        }
+        
+        /* Focus styles for accessibility */
+        .focus-accent:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+        
+        /* Form styles */
+        .form-input {
+            background-color: var(--card);
+            border: 1px solid rgba(225, 231, 239, 0.2);
+            color: var(--text);
+        }
+        
+        .form-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(111, 165, 195, 0.2);
+        }
+        
+        .form-input::placeholder {
+            color: rgba(225, 231, 239, 0.6);
+        }
+        
+        /* Success/Error states */
+        .success-message {
+            background-color: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            color: #22c55e;
+        }
+        
+        .error-message {
+            background-color: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #ef4444;
+        }
+        
+        /* Respect reduced motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            .fade-in-up,
+            .fade-in-section,
+            .hover-lift,
+            .btn-primary {
+                animation: none;
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-primary text-primary">
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center px-4 py-12">
+        <div class="max-w-screen-lg mx-auto w-full">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Logo -->
+                <div class="text-center md:text-left">
+                    <img 
+                        src="./assets/arthos3.png" 
+                        alt="Arthos AI" 
+                        class="w-80 max-w-full h-auto mx-auto md:mx-0"
+                        width="938" 
+                        height="331"
+                    >
+                </div>
+                
+                <!-- Tagline and CTA -->
+                <div class="text-center md:text-left">
+                    <h1 class="text-2xl md:text-3xl lg:text-4xl mb-8 fade-in-up">
+                        AI infrastructure to ground automated workflows in consistent context.
+                    </h1>
+                    <button 
+                        onclick="scrollToContact()" 
+                        class="btn-primary text-white px-8 py-4 rounded-lg font-medium text-lg focus-accent"
+                    >
+                        Contact Us
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Short Copy Block -->
+    <section class="py-20 px-4">
+        <div class="max-w-screen-lg mx-auto">
+            <div class="bg-card p-8 md:p-12 rounded-2xl hover-lift fade-in-section">
+                <div class="max-w-3xl mx-auto text-center">
+                    <p class="text-lg md:text-xl mb-6 leading-relaxed">
+                        We build intelligent systems that understand context, maintain consistency, and adapt to your unique business requirements.
+                    </p>
+                    <p class="text-lg md:text-xl mb-6 leading-relaxed">
+                        Our AI infrastructure provides the foundation for automated workflows that think before they act, ensuring reliable outcomes at scale.
+                    </p>
+                    <p class="text-lg md:text-xl leading-relaxed text-accent">
+                        Transform your operations with AI that truly understands your business.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="py-20 px-4">
+        <div class="max-w-2xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 fade-in-section">
+                    Get In Touch
+                </h2>
+                <p class="text-lg text-primary/80 fade-in-section">
+                    Ready to explore AI infrastructure for your workflows? Let's discuss your needs.
+                </p>
+            </div>
+            
+            <div class="bg-card p-8 md:p-10 rounded-2xl hover-lift fade-in-section">
+                <!-- Form Status Messages -->
+                <div id="form-success" class="success-message p-4 rounded-lg mb-6 hidden">
+                    <p class="font-medium">Thank you for your message! We'll get back to you soon.</p>
+                </div>
+                
+                <div id="form-error" class="error-message p-4 rounded-lg mb-6 hidden">
+                    <p class="font-medium">There was an error sending your message. Please try again.</p>
+                </div>
+                
+                <form id="contact-form" action="https://formspree.io/f/XXXXXXXX" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium mb-2">Name *</label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            required 
+                            class="form-input w-full px-4 py-3 rounded-lg focus-accent"
+                            placeholder="Your full name"
+                        >
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-sm font-medium mb-2">Email *</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required 
+                            class="form-input w-full px-4 py-3 rounded-lg focus-accent"
+                            placeholder="your.email@company.com"
+                        >
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-sm font-medium mb-2">Message *</label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            rows="5" 
+                            required 
+                            class="form-input w-full px-4 py-3 rounded-lg focus-accent resize-none"
+                            placeholder="Tell us about your automation challenges and goals..."
+                        ></textarea>
+                    </div>
+                    
+                    <button 
+                        type="submit" 
+                        class="btn-primary w-full text-white py-4 px-6 rounded-lg font-medium text-lg focus-accent"
+                        id="submit-btn"
+                    >
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 border-t border-primary/10">
+        <div class="max-w-screen-lg mx-auto text-center">
+            <p class="text-primary/60">© Arthos AI, Inc.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Respect reduced motion preference
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        
+        // Smooth scroll to contact section
+        function scrollToContact() {
+            const contactSection = document.getElementById('contact');
+            const behavior = prefersReducedMotion ? 'auto' : 'smooth';
+            contactSection.scrollIntoView({ behavior });
+        }
+        
+        // Intersection Observer for fade-in animations
+        if (!prefersReducedMotion) {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.fade-in-section').forEach(el => {
+                observer.observe(el);
+            });
+        } else {
+            // If reduced motion is preferred, make all elements visible immediately
+            document.querySelectorAll('.fade-in-section').forEach(el => {
+                el.classList.add('visible');
+            });
+        }
+        
+        // Form handling
+        const form = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const successMsg = document.getElementById('form-success');
+        const errorMsg = document.getElementById('form-error');
+        
+        // Email validation
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+        
+        // Form validation
+        function validateForm() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            if (!name || !email || !message) {
+                showError('Please fill in all required fields.');
+                return false;
+            }
+            
+            if (!isValidEmail(email)) {
+                showError('Please enter a valid email address.');
+                return false;
+            }
+            
+            return true;
+        }
+        
+        function showSuccess() {
+            successMsg.classList.remove('hidden');
+            errorMsg.classList.add('hidden');
+        }
+        
+        function showError(message = 'There was an error sending your message. Please try again.') {
+            errorMsg.querySelector('p').textContent = message;
+            errorMsg.classList.remove('hidden');
+            successMsg.classList.add('hidden');
+        }
+        
+        function hideMessages() {
+            successMsg.classList.add('hidden');
+            errorMsg.classList.add('hidden');
+        }
+        
+        // Form submission
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            hideMessages();
+            
+            if (!validateForm()) {
+                return;
+            }
+            
+            // Update button state
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            try {
+                // TODO: Replace with actual Formspree endpoint
+                // For now, simulate success after a delay
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+                // Uncomment this when you have a real Formspree endpoint:
+                /*
+                const formData = new FormData(form);
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    showSuccess();
+                    form.reset();
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+                */
+                
+                // Temporary success simulation
+                showSuccess();
+                form.reset();
+                
+            } catch (error) {
+                console.error('Form submission error:', error);
+                showError();
+            } finally {
+                // Reset button state
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+        
+        // Clear messages when user starts typing
+        form.addEventListener('input', hideMessages);
+    </script>
+</body>
+</html>
