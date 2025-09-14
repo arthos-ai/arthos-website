@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- TODO: Replace Formspree endpoint in the contact form with your actual endpoint -->
     <!-- TODO: Add og.png to assets folder for social media previews -->
+    <!-- Formspree endpoint configured: https://formspree.io/f/mdkljvvg -->
     
     <title>Arthos AI - AI Infrastructure for Automated Workflows</title>
     <meta name="description" content="AI infrastructure to ground automated workflows in consistent context. Transform your business with intelligent automation solutions.">
@@ -148,6 +148,16 @@
             color: #ef4444;
         }
         
+        /* Honeypot field - hidden from users but visible to bots */
+        .honeypot-field {
+            position: absolute;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            opacity: 0;
+        }
+        
         /* Respect reduced motion preferences */
         @media (prefers-reduced-motion: reduce) {
             .fade-in-up,
@@ -233,7 +243,13 @@
                     <p class="font-medium">There was an error sending your message. Please try again.</p>
                 </div>
                 
-                <form id="contact-form" action="https://formspree.io/f/XXXXXXXX" method="POST" class="space-y-6">
+                <form id="contact-form" action="https://formspree.io/f/mdkljvvg" method="POST" class="space-y-6">
+                    <!-- Honeypot field for spam protection -->
+                    <div class="honeypot-field">
+                        <label for="website">Website (leave blank)</label>
+                        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                    </div>
+                    
                     <div>
                         <label for="name" class="block text-sm font-medium mb-2">Name *</label>
                         <input 
@@ -343,6 +359,14 @@
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const message = document.getElementById('message').value.trim();
+            const honeypot = document.getElementById('website').value.trim();
+            
+            // Check honeypot field - if filled, it's likely spam
+            if (honeypot) {
+                console.log('Spam detected - honeypot field filled');
+                showError('Invalid submission detected.');
+                return false;
+            }
             
             if (!name || !email || !message) {
                 showError('Please fill in all required fields.');
@@ -389,12 +413,6 @@
             submitBtn.disabled = true;
             
             try {
-                // TODO: Replace with actual Formspree endpoint
-                // For now, simulate success after a delay
-                await new Promise(resolve => setTimeout(resolve, 1000));
-                
-                // Uncomment this when you have a real Formspree endpoint:
-                /*
                 const formData = new FormData(form);
                 const response = await fetch(form.action, {
                     method: 'POST',
@@ -410,11 +428,6 @@
                 } else {
                     throw new Error('Network response was not ok');
                 }
-                */
-                
-                // Temporary success simulation
-                showSuccess();
-                form.reset();
                 
             } catch (error) {
                 console.error('Form submission error:', error);
