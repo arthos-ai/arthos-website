@@ -107,7 +107,7 @@ This is a static site with minimal maintenance requirements:
 
 ## License
 
-© 2024 Arthos.ai. All rights reserved.
+© 2025 Arthos.ai. All rights reserved.
 
 ---
 
