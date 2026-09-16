@@ -1,39 +1,49 @@
 # Arthos.ai Marketing Website
 
-A lean, static single-page marketing website for Arthos.ai - an AI solutions company.
+A lean, static multi-page marketing website for Arthos.ai — an AI knowledge-conflict-detection company.
 
 ## Purpose
 
-This repository contains a minimal, static website designed to showcase Arthos.ai's AI-powered solutions and services. The site is built with vanilla HTML, CSS, and JavaScript, using Tailwind CSS via CDN for styling.
+This repository contains the static marketing site at arthos.ai: Home, How It Works, About, and Contact. Built with vanilla HTML, CSS, and JavaScript — no framework, no build step.
 
 ## Features
 
-- **Single-page design** with smooth scrolling navigation
+- **Four pages** — Home, How It Works, About, Contact — sharing one nav/footer and one dark, warm design system
 - **Responsive layout** that works on all devices
-- **Contact form** ready for Formspree integration
-- **SEO optimized** with proper meta tags and Open Graph support
+- **Contact form** wired to Formspree, with client-side validation and a honeypot field
+- **SEO optimized** with proper meta tags and Open Graph support per page
 - **Fast loading** with no build process or dependencies
 
 ## Technology Stack
 
-- **HTML5** - Semantic markup
-- **Tailwind CSS** - Utility-first CSS framework (via CDN)
-- **Vanilla JavaScript** - Minimal interactions and form handling
-- **No build tools** - Direct deployment ready
+- **HTML5** — Semantic markup
+- **Vanilla CSS** — Custom properties (`--bg`, `--card`, `--text`, `--accent`, etc.), no CSS framework
+- **Vanilla JavaScript** — Minimal interactions and form handling, no libraries
+- **No build tools** — Direct deployment ready
 
 ## Directory Structure
 
 ```
 arthos-website/
-├── index.html          # Main single-page site
-├── assets/             # Images and static assets
-│   ├── arthos3.png     # Company logo
-│   ├── favicon.ico     # Site favicon (placeholder)
-│   └── og.png          # Social preview image (placeholder)
+├── index.html          # Home
+├── how-it-works.html   # How It Works
+├── about.html          # About / team
+├── contact.html        # Contact (Formspree form)
+├── assets/             # Shared images and static assets
+│   ├── arthos3.png     # Wordmark logo (homepage hero)
+│   ├── heart-mark.png  # Heart-mark brand icon (nav + footer)
+│   ├── favicon.ico     # Site favicon
+│   └── og.png          # Social preview image
+├── about-us/            # Team headshots used on about.html
 ├── css/
-│   └── styles.css      # Optional CSS overrides
-└── README.md           # This file
+│   └── styles.css      # Unused legacy overrides (pre-dates the current design; safe to remove)
+├── STYLE_GUIDE.md       # Design system + copy conventions — read before editing any page
+└── README.md            # This file
 ```
+
+## Design system
+
+See `STYLE_GUIDE.md` for the full set of rules (color usage, typography roles, when to use a card vs. a numbered sequence, copy conventions, navigation/self-link gotchas). Every page shares the same CSS custom properties and component patterns — keep new sections consistent with what's there rather than introducing new one-off styles.
 
 ## Deployment
 
@@ -44,42 +54,26 @@ arthos-website/
    - **Build command**: `none` (no build step required)
    - **Build output directory**: `/` (root directory)
    - **Root directory**: `/` (default)
-3. **Deploy**: The site will be automatically deployed and available at your custom domain
-
-### Alternative Deployment Options
-
-- **GitHub Pages**: Simply enable Pages in repository settings
-- **Netlify**: Drag and drop the repository or connect via Git
-- **Vercel**: Import repository and deploy (no build configuration needed)
+3. **Deploy**: Cloudflare Pages is connected directly to this repo — any push to `main` auto-deploys within ~20 seconds.
 
 ## Formspree Integration
 
-The contact form is currently set up with a placeholder JavaScript handler. To enable actual form submission:
-
-1. **Sign up** for a [Formspree](https://formspree.io/) account
-2. **Create a new form** and get your endpoint URL
-3. **Update the form action** in `index.html`:
-   ```html
-   <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-   ```
-4. **Remove or modify** the JavaScript form handler as needed
+The contact form (`contact.html`) posts to a live Formspree endpoint (`https://formspree.io/f/mdkljvvg`). Fields: `name`, `email`, `company`, `message`, plus a hidden `website` honeypot field. To point it at a different form, update the `action` attribute on `#contact-form` and the Formspree dashboard accordingly.
 
 ## Customization
 
 ### Styling
-- **Primary styling**: Tailwind CSS classes in `index.html`
-- **Custom overrides**: Add styles to `css/styles.css`
-- **Color scheme**: Modify Tailwind classes or add custom CSS variables
+- Each page's `<style>` block defines the same shared tokens (`--bg`, `--card`, `--text`, `--text-dim`, `--text-faint`, `--accent`, `--line`). Change a token in one page, change it in all four to keep them in sync.
+- `css/styles.css` is legacy/unused — none of the four pages link to it.
 
 ### Content
-- **Text content**: Edit directly in `index.html`
-- **Images**: Replace placeholder images in `assets/` directory
-- **Meta tags**: Update Open Graph and SEO tags in the `<head>` section
+- **Text content**: edit directly in the relevant page's HTML.
+- **Team bios/photos**: `about.html` + the `about-us/` directory.
+- **Meta tags**: update the Open Graph/Twitter/description tags in each page's `<head>` — each page has its own.
 
-### Assets
-- **Logo**: Replace `assets/arthos3.png` with your actual logo
-- **Favicon**: Add `assets/favicon.ico` (16x16, 32x32, 48x48 sizes)
-- **Social preview**: Add `assets/og.png` (1200x630px recommended)
+### Navigation
+- Nav and footer links are relative paths (`/`, `/how-it-works.html`, `/about.html`, `/contact.html`) repeated on all four pages — update all four when adding/removing/renaming a page.
+- The current page's own nav link needs a real `href` to itself plus an `onclick="window.scrollTo(...); return false;"` handler (see STYLE_GUIDE.md — a same-URL `href` alone is a no-op in most browsers).
 
 ## Browser Support
 
@@ -91,24 +85,17 @@ The contact form is currently set up with a placeholder JavaScript handler. To e
 
 ## Performance
 
-- **No JavaScript frameworks** - Minimal bundle size
-- **CDN-delivered CSS** - Fast loading with global CDN
-- **Optimized images** - Compressed and properly sized
-- **Minimal dependencies** - No package.json or node_modules
+- **No JavaScript frameworks** — minimal bundle size
+- **No external CSS framework** — no Tailwind CDN dependency
+- **Minimal dependencies** — no package.json or node_modules
 
 ## Maintenance
 
-This is a static site with minimal maintenance requirements:
-
-- **Content updates**: Edit HTML directly
-- **Styling changes**: Modify CSS files
-- **Form updates**: Update Formspree endpoint when needed
-- **Asset updates**: Replace images as needed
+- **Content updates**: edit HTML directly, per page.
+- **Styling changes**: keep the four pages' `<style>` blocks in sync; update `STYLE_GUIDE.md` when a pattern changes.
+- **Form updates**: update the Formspree endpoint/fields in `contact.html` when needed.
+- **Asset updates**: replace images in `assets/` or `about-us/` as needed.
 
 ## License
 
-© 2025 Arthos.ai. All rights reserved.
-
----
-
-**Note**: This is a marketing website template. Replace placeholder content and assets with actual Arthos.ai branding and information before deployment.
+© Arthos AI, Inc. All rights reserved.

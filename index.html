@@ -3,450 +3,526 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      
-    <title>Arthos AI - The Living Canonical Layer That Powers Every Workflow</title>
-    <meta name="description" content="Keep all tools and workflows aligned with a living, machine-readable canon that updates as your data evolves.">
-    
+
+    <title>Arthos AI — Automatic Knowledge Conflict Detection</title>
+    <meta name="description" content="Arthos surfaces the contradictions already hiding in your organization's knowledge, so you can make an intentional choice instead of an accidental one.">
+
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Arthos AI - The Living Canonical Layer That Powers Every Workflow">
-    <meta property="og:description" content="Keep all tools and workflows aligned with a living, machine-readable canon that updates as your data evolves.">
+    <meta property="og:title" content="Arthos AI — Automatic Knowledge Conflict Detection">
+    <meta property="og:description" content="Arthos surfaces the contradictions already hiding in your organization's knowledge, so you can make an intentional choice instead of an accidental one.">
     <meta name="image" property="og:image" content="https://arthos.ai/assets/og.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:alt" content="Arthos AI Logo">
-    <meta property="og:url" content="https://arthos.ai">
+    <meta property="og:url" content="https://arthos.ai/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Arthos AI">
-    
+
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Arthos AI - The Living Canonical Layer That Powers Every Workflow">
-    <meta name="twitter:description" content="Keep all tools and workflows aligned with a living, machine-readable canon that updates as your data evolves.">
+    <meta name="twitter:title" content="Arthos AI — Automatic Knowledge Conflict Detection">
+    <meta name="twitter:description" content="Arthos surfaces the contradictions already hiding in your organization's knowledge, so you can make an intentional choice instead of an accidental one.">
     <meta name="twitter:image" content="https://arthos.ai/assets/og.png">
-    
+
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
-    
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+
     <!-- Preconnect for Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Google Font - Armata -->
-    <link href="https://fonts.googleapis.com/css2?family=Armata&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Custom CSS Variables and Styles -->
-    <style>
-        :root {
-            --bg: #1E1B18;
-            --text: #E1E7EF;
-            --accent: #6FA5C3;
-            --card: #2C2825;
-        }
-        
-        * {
-            font-family: 'Armata', sans-serif;
-        }
-        
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-        }
-        
-        .bg-primary { background-color: var(--bg); }
-        .bg-card { background-color: var(--card); }
-        .text-primary { color: var(--text); }
-        .text-accent { color: var(--accent); }
-        .border-accent { border-color: var(--accent); }
-        .bg-accent { background-color: var(--accent); }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out;
-        }
-        
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        
-        .fade-in-section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Card hover effects */
-        .hover-lift {
-            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
-        }
-        
-        .hover-lift:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-        }
-        
-        /* Button hover effects */
-        .btn-primary {
-            background-color: var(--accent);
-            transition: opacity 0.2s ease-out, transform 0.1s ease-out;
-        }
-        
-        .btn-primary:hover {
-            opacity: 0.9;
-            transform: scale(1.02);
-        }
-        
-        .btn-primary:active {
-            transform: scale(0.98);
-        }
-        
-        /* Focus styles for accessibility */
-        .focus-accent:focus {
-            outline: 2px solid var(--accent);
-            outline-offset: 2px;
-        }
-        
-        /* Form styles */
-        .form-input {
-            background-color: var(--card);
-            border: 1px solid rgba(225, 231, 239, 0.2);
-            color: var(--text);
-        }
-        
-        .form-input:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 2px rgba(111, 165, 195, 0.2);
-        }
-        
-        .form-input::placeholder {
-            color: rgba(225, 231, 239, 0.6);
-        }
-        
-        /* Success/Error states */
-        .success-message {
-            background-color: rgba(34, 197, 94, 0.1);
-            border: 1px solid rgba(34, 197, 94, 0.3);
-            color: #22c55e;
-        }
-        
-        .error-message {
-            background-color: rgba(239, 68, 68, 0.1);
-            border: 1px solid rgba(239, 68, 68, 0.3);
-            color: #ef4444;
-        }
-        
-        /* Honeypot field - hidden from users but visible to bots */
-        .honeypot-field {
-            position: absolute;
-            left: -9999px;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-            opacity: 0;
-        }
-        
-        /* Respect reduced motion preferences */
-        @media (prefers-reduced-motion: reduce) {
-            .fade-in-up,
-            .fade-in-section,
-            .hover-lift,
-            .btn-primary {
-                animation: none;
-                transition: none;
-            }
-        }
-    </style>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Armata&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #1c1916;
+    --bg-raise: #23201c;
+    --card: #363026;
+    --text: #e6ebf1;
+    --text-dim: rgba(230, 235, 241, 0.78);
+    --text-faint: rgba(230, 235, 241, 0.70);
+    --accent: #6fa5c3;
+    --accent-dim: rgba(111, 165, 195, 0.16);
+    --line: rgba(230, 235, 241, 0.09);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Armata', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  .mono {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 0.92rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 16px;
+  }
+
+  a { color: inherit; }
+
+  /* --- nav --- */
+  nav.site-nav {
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--bg);
+  }
+
+  .site-nav .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 74px;
+    gap: 24px;
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-brand img {
+    width: 20px;
+    height: 20px;
+    display: block;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    font-size: 0.92rem;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-dim);
+    transition: color 0.15s ease;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:focus-visible {
+    color: var(--text);
+  }
+
+  .nav-cta {
+    border: 1px solid rgba(111, 165, 195, 0.55);
+    border-radius: 999px;
+    padding: 8px 18px !important;
+    color: var(--accent) !important;
+  }
+
+  .nav-cta:hover,
+  .nav-cta:focus-visible {
+    background: var(--accent-dim);
+  }
+
+  /* --- hero --- */
+  .hero {
+    padding: 72px 0 88px;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .hero-logo img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    display: block;
+  }
+
+  .hero h1 {
+    font-weight: 400;
+    font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+    line-height: 1.28;
+    letter-spacing: -0.01em;
+    margin: 0 0 20px;
+    text-wrap: balance;
+    max-width: 20ch;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--text-dim);
+    max-width: 46ch;
+    margin: 0 0 32px;
+  }
+
+  .btn {
+    display: inline-block;
+    font-family: 'Armata', sans-serif;
+    background: var(--accent);
+    color: #14110f;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.1s ease, opacity 0.15s ease;
+  }
+
+  .btn:hover,
+  .btn:focus-visible { opacity: 0.9; }
+  .btn:active { transform: scale(0.98); }
+
+  /* --- section scaffolding --- */
+  section.block {
+    padding: 76px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .section-head {
+    max-width: 60ch;
+    margin: 0 0 40px;
+  }
+
+  .section-head h2 {
+    font-weight: 400;
+    font-size: clamp(1.35rem, 2vw, 1.7rem);
+    margin: 0;
+    line-height: 1.3;
+    text-wrap: balance;
+  }
+
+  /* --- arc (sequence: real order, numbered) --- */
+  .arc-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+
+  .arc-step {
+    position: relative;
+    padding: 4px 26px 4px 0;
+  }
+
+  .arc-step + .arc-step {
+    border-left: 1px solid var(--line);
+    padding-left: 26px;
+  }
+
+  .arc-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--text-faint);
+    margin-bottom: 10px;
+  }
+
+  .arc-tag {
+    font-size: 1.02rem;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+
+  .arc-body {
+    font-size: 0.94rem;
+    line-height: 1.6;
+    color: var(--text-dim);
+    margin: 0;
+  }
+
+  /* --- use cases (parallel, not sequential: cards) --- */
+  .usecase-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .usecase-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 26px 24px;
+  }
+
+  .usecase-card h3 {
+    font-weight: 400;
+    font-size: 1.05rem;
+    margin: 0 0 12px;
+  }
+
+  .usecase-card p {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--text-dim);
+    margin: 0;
+  }
+
+  /* --- secondary link (quiet, not a card/button) --- */
+  .quiet-link {
+    text-align: center;
+    padding: 8px 0 72px;
+  }
+
+  .quiet-link a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 4px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .quiet-link a:hover,
+  .quiet-link a:focus-visible {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  /* --- closing CTA band --- */
+  .cta-band {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 52px 48px;
+    text-align: center;
+  }
+
+  .cta-band h2 {
+    font-weight: 400;
+    font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+    margin: 0 0 16px;
+  }
+
+  .cta-band p {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--text-dim);
+    max-width: 54ch;
+    margin: 0 auto 30px;
+  }
+
+  /* --- footer --- */
+  footer.site-foot {
+    border-top: 1px solid var(--line);
+    padding: 40px 0 48px;
+  }
+
+  .foot-nav {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    font-size: 0.86rem;
+    color: var(--text-dim);
+    margin-bottom: 18px;
+  }
+
+  .foot-nav a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .foot-nav a:hover,
+  .foot-nav a:focus-visible { color: var(--text); }
+
+  .foot-team {
+    text-align: center;
+    font-size: 0.86rem;
+    margin-bottom: 22px;
+  }
+
+  .foot-team a {
+    text-decoration: none;
+    color: var(--text-dim);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 2px;
+  }
+
+  .foot-team a:hover,
+  .foot-team a:focus-visible { color: var(--accent); border-color: var(--accent); }
+
+  .foot-copy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.82rem;
+    color: var(--text-faint);
+  }
+
+  .foot-copy img {
+    width: 14px;
+    height: 14px;
+    display: block;
+  }
+
+  @media (max-width: 860px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+    .hero-logo img { max-width: 220px; margin: 0 auto; }
+    .hero { text-align: center; }
+    .hero-sub { margin-left: auto; margin-right: auto; }
+    .arc-row { grid-template-columns: 1fr; gap: 28px; }
+    .arc-step + .arc-step { border-left: none; padding-left: 0; border-top: 1px solid var(--line); padding-top: 24px; }
+    .usecase-row { grid-template-columns: 1fr; }
+    .nav-links { gap: 16px; font-size: 0.86rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
 </head>
-<body class="bg-primary text-primary">
-    <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center px-4 py-12">
-        <div class="max-w-screen-lg mx-auto w-full">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <!-- Logo -->
-                <div class="text-center md:text-left">
-                    <img 
-                        src="./assets/arthos3.png" 
-                        alt="Arthos AI" 
-                        class="w-80 max-w-full h-auto mx-auto md:mx-0"
-                        width="938" 
-                        height="331"
-                    >
-                </div>
-                
-                <!-- Tagline and CTA -->
-                <div class="text-center md:text-left">
-                    <h1 class="text-2xl md:text-3xl lg:text-4xl mb-8 fade-in-up">
-                        Keep all tools and workflows aligned with a living, machine-readable canon that updates as your data evolves.
-                    </h1>
-                    <button 
-                        onclick="scrollToContact()" 
-                        class="btn-primary text-white px-8 py-4 rounded-lg font-medium text-lg focus-accent"
-                    >
-                        Contact Us
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
+<body>
+<script>
+  if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+  function toTop() {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }
+  toTop();
+  document.addEventListener('DOMContentLoaded', toTop);
+  window.addEventListener('load', toTop);
+  window.addEventListener('pageshow', toTop);
+  setTimeout(toTop, 0);
+  setTimeout(toTop, 150);
+</script>
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="nav-brand" href="/" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+      <img src="/assets/heart-mark.png" alt="">
+      arthos
+    </a>
+    <div class="nav-links">
+      <a href="/how-it-works.html">How it works</a>
+      <a href="/about.html">About us</a>
+      <a class="nav-cta" href="/contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
 
-    <!-- Short Copy Block -->
-    <section class="py-20 px-4">
-        <div class="max-w-screen-lg mx-auto">
-            <div class="bg-card p-8 md:p-12 rounded-2xl hover-lift fade-in-section">
-                <div class="max-w-3xl mx-auto text-center">
-                    <p class="text-lg md:text-xl mb-6 leading-relaxed">
-                        We build systems that turn your unstructured knowledge into a living canonical layer, keeping every tool and workflow aligned.
-                    </p>
-                    <p class="text-lg md:text-xl mb-6 leading-relaxed">
-                        Our AI infrastructure captures changes in knowledge sources, updates context, and ensures coherence across complex systems.
-                    </p>
-                    <p class="text-lg md:text-xl leading-relaxed text-accent">
-                        Build with confidence on a foundation every tool can trust.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-logo">
+      <img src="/assets/arthos3.png" alt="Arthos">
+    </div>
+    <div>
+      <p class="eyebrow">Now onboarding design partners</p>
+      <h1>The truth is changing all the time. Arthos keeps you ahead of it.</h1>
+      <p class="hero-sub">What's true today can be outdated tomorrow. Arthos traces everything you rely on back to its source, and flags the moment two things start to contradict each other.</p>
+      <a class="btn" href="/contact.html">Let's partner</a>
+    </div>
+  </div>
+</header>
 
-    <!-- Contact Form -->
-    <section id="contact" class="py-20 px-4">
-        <div class="max-w-2xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 fade-in-section">
-                    Get In Touch
-                </h2>
-                <p class="text-lg text-primary/80 fade-in-section">
-                    Ready to explore how shifting knowledge becomes one definitive version? Let's discuss your needs.
-                </p>
-            </div>
-            
-            <div class="bg-card p-8 md:p-10 rounded-2xl hover-lift fade-in-section">
-                <!-- Form Status Messages -->
-                <div id="form-success" class="success-message p-4 rounded-lg mb-6 hidden">
-                    <p class="font-medium">Thank you for your message! We'll get back to you soon.</p>
-                </div>
-                
-                <div id="form-error" class="error-message p-4 rounded-lg mb-6 hidden">
-                    <p class="font-medium">There was an error sending your message. Please try again.</p>
-                </div>
-                
-                <form id="contact-form" action="https://formspree.io/f/mdkljvvg" method="POST" class="space-y-6">
-                    <!-- Honeypot field for spam protection -->
-                    <div class="honeypot-field">
-                        <label for="website">Website (leave blank)</label>
-                        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
-                    </div>
-                    
-                    <div>
-                        <label for="name" class="block text-sm font-medium mb-2">Name *</label>
-                        <input 
-                            type="text" 
-                            id="name" 
-                            name="name" 
-                            required 
-                            class="form-input w-full px-4 py-3 rounded-lg focus-accent"
-                            placeholder="Your full name"
-                        >
-                    </div>
-                    
-                    <div>
-                        <label for="email" class="block text-sm font-medium mb-2">Email *</label>
-                        <input 
-                            type="email" 
-                            id="email" 
-                            name="email" 
-                            required 
-                            class="form-input w-full px-4 py-3 rounded-lg focus-accent"
-                            placeholder="your.email@company.com"
-                        >
-                    </div>
-                    
-                    <div>
-                        <label for="message" class="block text-sm font-medium mb-2">Message *</label>
-                        <textarea 
-                            id="message" 
-                            name="message" 
-                            rows="5" 
-                            required 
-                            class="form-input w-full px-4 py-3 rounded-lg focus-accent resize-none"
-                            placeholder="Tell us about your automation challenges and goals..."
-                        ></textarea>
-                    </div>
-                    
-                    <button 
-                        type="submit" 
-                        class="btn-primary w-full text-white py-4 px-6 rounded-lg font-medium text-lg focus-accent"
-                        id="submit-btn"
-                    >
-                        Send Message
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
+<section class="block" id="how-it-works-preview">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">From drift to resolution</p>
+      <h2>What happens when something doesn't line up.</h2>
+    </div>
+    <div class="arc-row">
+      <div class="arc-step">
+        <p class="arc-num mono">01</p>
+        <p class="arc-tag">Detect</p>
+        <p class="arc-body">Arthos flags a contradiction the moment it exists. You're not left to discover it only when you need the answer.</p>
+      </div>
+      <div class="arc-step">
+        <p class="arc-num mono">02</p>
+        <p class="arc-tag">Triage</p>
+        <p class="arc-body">Not every difference is a real conflict. Arthos tells you which ones are, so your team spends time only on what matters.</p>
+      </div>
+      <div class="arc-step">
+        <p class="arc-num mono">03</p>
+        <p class="arc-tag">Decide</p>
+        <p class="arc-body">A person decides which version is true. Arthos surfaces the conflict. It doesn't hand down the verdict.</p>
+      </div>
+      <div class="arc-step">
+        <p class="arc-num mono">04</p>
+        <p class="arc-tag">Resolve</p>
+        <p class="arc-body">That decision becomes the answer going forward. It's always traceable back to its source. Never a black box.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="py-12 px-4 border-t border-primary/10">
-        <div class="max-w-screen-lg mx-auto text-center">
-            <p class="text-primary/60 flex items-center justify-center gap-3">
-                <img src="./assets/heart-mark.png" alt="" class="w-4 h-4" aria-hidden="true">
-                © Arthos AI, Inc.
-                <img src="./assets/heart-mark.png" alt="" class="w-4 h-4" aria-hidden="true">
-            </p>
-        </div>
-    </footer>
+<div class="quiet-link">
+  <a href="/how-it-works.html">How it works &rarr;</a>
+</div>
 
-    <!-- JavaScript -->
-    <script>
-        // Respect reduced motion preference
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        
-        // Smooth scroll to contact section
-        function scrollToContact() {
-            const contactSection = document.getElementById('contact');
-            const behavior = prefersReducedMotion ? 'auto' : 'smooth';
-            contactSection.scrollIntoView({ behavior });
-        }
-        
-        // Intersection Observer for fade-in animations
-        if (!prefersReducedMotion) {
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, observerOptions);
-            
-            document.querySelectorAll('.fade-in-section').forEach(el => {
-                observer.observe(el);
-            });
-        } else {
-            // If reduced motion is preferred, make all elements visible immediately
-            document.querySelectorAll('.fade-in-section').forEach(el => {
-                el.classList.add('visible');
-            });
-        }
-        
-        // Form handling
-        const form = document.getElementById('contact-form');
-        const submitBtn = document.getElementById('submit-btn');
-        const successMsg = document.getElementById('form-success');
-        const errorMsg = document.getElementById('form-error');
-        
-        // Email validation
-        function isValidEmail(email) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
-        }
-        
-        // Form validation
-        function validateForm() {
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-            const honeypot = document.getElementById('website').value.trim();
-            
-            // Check honeypot field - if filled, it's likely spam
-            if (honeypot) {
-                console.log('Spam detected - honeypot field filled');
-                showError('Invalid submission detected.');
-                return false;
-            }
-            
-            if (!name || !email || !message) {
-                showError('Please fill in all required fields.');
-                return false;
-            }
-            
-            if (!isValidEmail(email)) {
-                showError('Please enter a valid email address.');
-                return false;
-            }
-            
-            return true;
-        }
-        
-        function showSuccess() {
-            successMsg.classList.remove('hidden');
-            errorMsg.classList.add('hidden');
-        }
-        
-        function showError(message = 'There was an error sending your message. Please try again.') {
-            errorMsg.querySelector('p').textContent = message;
-            errorMsg.classList.remove('hidden');
-            successMsg.classList.add('hidden');
-        }
-        
-        function hideMessages() {
-            successMsg.classList.add('hidden');
-            errorMsg.classList.add('hidden');
-        }
-        
-        // Form submission
-        form.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            hideMessages();
-            
-            if (!validateForm()) {
-                return;
-            }
-            
-            // Update button state
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-            
-            try {
-                const formData = new FormData(form);
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                if (response.ok) {
-                    showSuccess();
-                    form.reset();
-                } else {
-                    throw new Error('Network response was not ok');
-                }
-                
-            } catch (error) {
-                console.error('Form submission error:', error);
-                showError();
-            } finally {
-                // Reset button state
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }
-        });
-        
-        // Clear messages when user starts typing
-        form.addEventListener('input', hideMessages);
-    </script>
+<section class="block">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Where this shows up</p>
+      <h2>A few places knowledge quietly stops agreeing with itself.</h2>
+    </div>
+    <div class="usecase-row">
+      <div class="usecase-card">
+        <h3>Regulatory &amp; ordinance changes</h3>
+        <p>A city updates a zoning or safety code, and different departments' procedures haven't caught up with each other or with the new rule.</p>
+      </div>
+      <div class="usecase-card">
+        <h3>M&amp;A integration</h3>
+        <p>Two merging companies' HR, accounting, and ops policies say different things about the same question, and no one's reconciled them yet.</p>
+      </div>
+      <div class="usecase-card">
+        <h3>Franchise continuity</h3>
+        <p>A franchise spanning multiple writers, years, and formats accumulates details that quietly contradict earlier canon long before a fan or reviewer catches it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="contact-preview">
+  <div class="wrap">
+    <div class="cta-band">
+      <h2>Let's build this together</h2>
+      <p>We're early, and this works best as a two-way build. Help us learn how you want conflicts like this surfaced and resolved. We'll handle the rest. If you're up for that, let's talk.</p>
+      <a class="btn" href="/contact.html">Let's partner</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot" id="about-preview">
+  <div class="wrap">
+    <div class="foot-nav">
+      <a href="/how-it-works.html">How it works</a>
+      <a href="/about.html">About us</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <p class="foot-team">Curious who's building this? <a href="/about.html">Meet the team &rarr;</a></p>
+    <div class="foot-copy">
+      <img src="/assets/heart-mark.png" alt="">
+      © <span id="copyright-year">2026</span> Arthos AI, Inc.
+      <img src="/assets/heart-mark.png" alt="">
+    </div>
+  </div>
+</footer>
+
+<script>
+  var yearEl = document.getElementById('copyright-year');
+  if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
+</script>
 </body>
 </html>

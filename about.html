@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About — Arthos AI</title>
+    <meta name="description" content="Meet the small team building Arthos, an AI platform that surfaces contradictions in your organization's knowledge.">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="About — Arthos AI">
+    <meta property="og:description" content="Meet the small team building Arthos, an AI platform that surfaces contradictions in your organization's knowledge.">
+    <meta name="image" property="og:image" content="https://arthos.ai/assets/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:alt" content="Arthos AI Logo">
+    <meta property="og:url" content="https://arthos.ai/about.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Arthos AI">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About — Arthos AI">
+    <meta name="twitter:description" content="Meet the small team building Arthos, an AI platform that surfaces contradictions in your organization's knowledge.">
+    <meta name="twitter:image" content="https://arthos.ai/assets/og.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Armata&family=Manrope:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #1c1916;
+    --bg-raise: #23201c;
+    --card: #363026;
+    --text: #e6ebf1;
+    --text-dim: rgba(230, 235, 241, 0.78);
+    --text-faint: rgba(230, 235, 241, 0.70);
+    --accent: #6fa5c3;
+    --accent-dim: rgba(111, 165, 195, 0.16);
+    --line: rgba(230, 235, 241, 0.09);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Armata', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  .mono {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 0.92rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 16px;
+  }
+
+  a { color: inherit; }
+
+  /* --- nav --- */
+  nav.site-nav {
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--bg);
+  }
+
+  .site-nav .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 74px;
+    gap: 24px;
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-brand img {
+    width: 20px;
+    height: 20px;
+    display: block;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    font-size: 0.92rem;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-dim);
+    transition: color 0.15s ease;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:focus-visible {
+    color: var(--text);
+  }
+
+  .nav-current {
+    color: var(--text) !important;
+  }
+
+  .nav-cta {
+    border: 1px solid rgba(111, 165, 195, 0.55);
+    border-radius: 999px;
+    padding: 8px 18px !important;
+    color: var(--accent) !important;
+  }
+
+  .nav-cta:hover,
+  .nav-cta:focus-visible {
+    background: var(--accent-dim);
+  }
+
+  /* --- hero --- */
+  .hero {
+    padding: 72px 0 88px;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .hero-logo img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    display: block;
+  }
+
+  .hero h1 {
+    font-weight: 400;
+    font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+    line-height: 1.28;
+    letter-spacing: -0.01em;
+    margin: 0 0 20px;
+    text-wrap: balance;
+    max-width: 20ch;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--text-dim);
+    max-width: 46ch;
+    margin: 0 0 32px;
+  }
+
+  .btn {
+    display: inline-block;
+    font-family: 'Armata', sans-serif;
+    background: var(--accent);
+    color: #14110f;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.1s ease, opacity 0.15s ease;
+  }
+
+  .btn:hover,
+  .btn:focus-visible { opacity: 0.9; }
+  .btn:active { transform: scale(0.98); }
+
+  /* --- section scaffolding --- */
+  section.block {
+    padding: 76px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .section-head {
+    max-width: 60ch;
+    margin: 0 0 40px;
+  }
+
+  .section-head h2 {
+    font-weight: 400;
+    font-size: clamp(1.35rem, 2vw, 1.7rem);
+    margin: 0;
+    line-height: 1.3;
+    text-wrap: balance;
+  }
+
+  /* --- arc (sequence: real order, numbered) --- */
+  .arc-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+
+  .arc-step {
+    position: relative;
+    padding: 4px 26px 4px 0;
+  }
+
+  .arc-step + .arc-step {
+    border-left: 1px solid var(--line);
+    padding-left: 26px;
+  }
+
+  .arc-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--text-faint);
+    margin-bottom: 10px;
+  }
+
+  .arc-tag {
+    font-size: 1.02rem;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+
+  .arc-body {
+    font-size: 0.94rem;
+    line-height: 1.6;
+    color: var(--text-dim);
+    margin: 0;
+  }
+
+  /* --- use cases (parallel, not sequential: cards) --- */
+  .usecase-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .usecase-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 26px 24px;
+  }
+
+  .usecase-card h3 {
+    font-weight: 400;
+    font-size: 1.05rem;
+    margin: 0 0 12px;
+  }
+
+  .usecase-card p {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--text-dim);
+    margin: 0;
+  }
+
+  /* --- secondary link (quiet, not a card/button) --- */
+  .quiet-link {
+    text-align: center;
+    padding: 8px 0 72px;
+  }
+
+  .quiet-link a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 4px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .quiet-link a:hover,
+  .quiet-link a:focus-visible {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  /* --- closing CTA band --- */
+  .cta-band {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 52px 48px;
+    text-align: center;
+  }
+
+  .cta-band h2 {
+    font-weight: 400;
+    font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+    margin: 0 0 16px;
+  }
+
+  .cta-band p {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--text-dim);
+    max-width: 54ch;
+    margin: 0 auto 30px;
+  }
+
+  /* --- footer --- */
+  footer.site-foot {
+    border-top: 1px solid var(--line);
+    padding: 40px 0 48px;
+  }
+
+  .foot-nav {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    font-size: 0.86rem;
+    color: var(--text-dim);
+    margin-bottom: 18px;
+  }
+
+  .foot-nav a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .foot-nav a:hover,
+  .foot-nav a:focus-visible { color: var(--text); }
+
+  .foot-team {
+    text-align: center;
+    font-size: 0.86rem;
+    margin-bottom: 22px;
+  }
+
+  .foot-team a {
+    text-decoration: none;
+    color: var(--text-dim);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 2px;
+  }
+
+  .foot-team a:hover,
+  .foot-team a:focus-visible { color: var(--accent); border-color: var(--accent); }
+
+  .foot-copy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.82rem;
+    color: var(--text-faint);
+  }
+
+  .foot-copy img {
+    width: 14px;
+    height: 14px;
+    display: block;
+  }
+
+  
+  /* --- page header (not a hero, no logo) --- */
+  .page-head {
+    padding: 64px 0 56px;
+  }
+
+  .page-head h1 {
+    font-weight: 400;
+    font-size: clamp(1.9rem, 3.2vw, 2.5rem);
+    line-height: 1.28;
+    letter-spacing: -0.01em;
+    margin: 0 0 18px;
+    text-wrap: balance;
+    max-width: 26ch;
+  }
+
+  .page-head .hero-sub { margin: 0; max-width: 56ch; }
+
+  /* --- placeholder panel (worked example, pending) --- */
+  .placeholder-panel {
+    border: 1px dashed var(--line);
+    border-radius: 14px;
+    padding: 40px 36px;
+    text-align: center;
+  }
+
+  .placeholder-panel p {
+    margin: 0;
+    color: var(--text-faint);
+    font-size: 0.95rem;
+  }
+
+  .placeholder-panel .eyebrow { margin-bottom: 12px; }
+
+  /* --- example UI panel (an illustrative "your own tooling" surface, not a screenshot) --- */
+  .example-panel {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 34px 36px;
+    min-height: 34rem;
+    display: flex;
+  }
+
+  .example-panel > div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .example-panel > div[hidden] {
+    display: none;
+  }
+
+  .example-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin: 0 0 22px;
+  }
+
+  .example-statements {
+    display: grid;
+    gap: 16px;
+    margin: 0 0 28px;
+  }
+
+  .example-statement {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .example-tag {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    margin-top: 2px;
+  }
+
+  .example-statement p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .example-source {
+    display: block;
+    margin-top: 4px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.76rem;
+    color: var(--text-faint);
+  }
+
+  .example-divider {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 0 0 24px;
+  }
+
+  .example-prompt {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    margin: 0 0 14px;
+  }
+
+  .example-caption {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.82rem;
+    color: var(--text-faint);
+    margin: 18px 0 0;
+    text-align: center;
+  }
+
+  .example-step {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.76rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin: 0 0 20px;
+  }
+
+  .example-severity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 22px;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+  }
+
+  .example-severity-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #d9a441;
+    flex-shrink: 0;
+  }
+
+  .example-note {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.86rem;
+    line-height: 1.55;
+    color: var(--text-faint);
+    margin: 0 0 24px;
+    padding-left: 14px;
+    border-left: 2px solid var(--line);
+  }
+
+  .example-continue {
+    display: block;
+    margin: auto 0 0 auto;
+  }
+
+  .example-choices {
+    display: grid;
+    gap: 14px;
+  }
+
+  .example-choice {
+    font-family: inherit;
+    text-align: left;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 20px;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .example-choice:hover,
+  .example-choice:focus-visible {
+    border-color: rgba(111, 165, 195, 0.55);
+  }
+
+  .example-choice-label {
+    color: var(--accent);
+    font-size: 0.98rem;
+    margin: 0 0 6px;
+  }
+
+  .example-choice-implication {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.86rem;
+    line-height: 1.5;
+    color: var(--text-dim);
+    margin: 0 0 12px;
+  }
+
+  .example-choice-doclabel {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin: 0 0 8px;
+  }
+
+  .example-choice-docs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .example-choice-docs li {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .example-choice-docs li::before {
+    content: '\2022';
+    position: absolute;
+    left: 0;
+    color: var(--text-faint);
+  }
+
+  .example-back {
+    margin-top: auto;
+    align-self: flex-start;
+  }
+
+  /* --- provenance (parallel points, not a sequence: no numbering) --- */
+  .provenance-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    max-width: 68ch;
+  }
+
+  .provenance-list p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--text-dim);
+  }
+
+  .provenance-list strong { color: var(--text); font-weight: 500; }
+
+  /* --- integration / code example --- */
+  .code-block {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 26px 28px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.88rem;
+    line-height: 1.9;
+    max-width: 68ch;
+    overflow-x: auto;
+  }
+
+  .code-line { color: var(--text); white-space: pre; }
+  .code-arrow { color: var(--text-faint); padding-left: 20px; }
+  .code-pair + .code-pair { margin-top: 18px; }
+
+  .code-json {
+    margin: 0;
+    color: var(--text-dim);
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: 0.86rem;
+    line-height: 1.7;
+  }
+
+  .code-json .k { color: var(--accent); }
+  .code-json .v { color: var(--text); }
+
+  /* --- FAQ --- */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    max-width: 68ch;
+  }
+
+  .faq-item {
+    padding: 22px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .faq-item:last-child { border-bottom: 1px solid var(--line); }
+
+  .faq-q {
+    margin: 0 0 10px;
+    font-size: 1rem;
+    color: var(--text);
+  }
+
+  .faq-a {
+    margin: 0;
+    font-size: 0.94rem;
+    line-height: 1.6;
+    color: var(--text-dim);
+  }
+
+  @media (max-width: 860px) {
+    .page-head h1 { max-width: none; }
+
+    .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+    .hero-logo img { max-width: 220px; margin: 0 auto; }
+    .hero { text-align: center; }
+    .hero-sub { margin-left: auto; margin-right: auto; }
+    .arc-row { grid-template-columns: 1fr; gap: 28px; }
+    .arc-step + .arc-step { border-left: none; padding-left: 0; border-top: 1px solid var(--line); padding-top: 24px; }
+    .usecase-row { grid-template-columns: 1fr; }
+    .nav-links { gap: 16px; font-size: 0.86rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+
+  /* --- team grid --- */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  .team-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 30px;
+    display: flex;
+    gap: 22px;
+  }
+
+  .team-photo {
+    width: 96px;
+    height: 96px;
+    border-radius: 12px;
+    flex-shrink: 0;
+    object-fit: cover;
+    background: var(--bg);
+  }
+
+  .team-photo-placeholder {
+    width: 96px;
+    height: 96px;
+    border-radius: 12px;
+    flex-shrink: 0;
+    background: var(--bg);
+    border: 1px dashed var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.6rem;
+    color: var(--text-faint);
+  }
+
+  .team-info { min-width: 0; }
+
+  .team-name {
+    font-size: 1.15rem;
+    margin: 0 0 2px;
+  }
+
+  .team-title {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 12px;
+  }
+
+  .team-bio {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--text-dim);
+    margin: 0;
+  }
+
+  .team-bio.placeholder {
+    font-style: italic;
+    color: var(--text-faint);
+  }
+
+  .team-photo-note {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-faint);
+    margin: 6px 0 0;
+    text-align: center;
+  }
+
+  @media (max-width: 720px) {
+    .team-grid { grid-template-columns: 1fr; }
+    .team-card { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="nav-brand" href="/">
+      <img src="/assets/heart-mark.png" alt="">
+      arthos
+    </a>
+    <div class="nav-links">
+      <a href="/how-it-works.html">How it works</a>
+      <a href="/about.html" class="nav-current" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">About us</a>
+      <a class="nav-cta" href="/contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">About us</p>
+    <h1>The team behind Arthos.</h1>
+    <p class="hero-sub">We're a small team, building this from the ground up. Here's who's behind it.</p>
+  </div>
+</header>
+
+<section class="block">
+  <div class="wrap">
+    <div class="team-grid">
+
+      <div class="team-card">
+        <img class="team-photo" src="/about-us/eric-north-headshot.jpg" alt="Eric North">
+        <div class="team-info">
+          <p class="team-name">Eric North</p>
+          <p class="team-title">Co-founder &amp; CEO</p>
+          <p class="team-bio">Eric has 25+ years in tech, including 15 years at Amazon in engineering and technical product leadership. He ran the $1.7B PC Gaming P&amp;L and built Alexa's data warehouse, and holds both an engineering background and an MBA.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <img class="team-photo" src="/about-us/jason-thalken-headshot.jpg" alt="Jason Thalken">
+        <div class="team-info">
+          <p class="team-name">Jason Thalken</p>
+          <p class="team-title">Co-founder &amp; CTO</p>
+          <p class="team-bio">Jason holds a PhD in physics with a focus on complexity, and has 20+ years in AI/ML, including 10 years at Amazon leading AI/ML teams across Alexa and customer service. His expertise spans NLP, knowledge infrastructure, and reasoning systems.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <img class="team-photo" src="/about-us/karen-yang-headshot.jpg" alt="Karen Yang">
+        <div class="team-info">
+          <p class="team-name">Karen Yang</p>
+          <p class="team-title">COO</p>
+          <p class="team-bio">Karen has 20+ years in payments, AI/ML, and enterprise tooling, including 11 years at Amazon in technical product leadership across Alexa and AWS. She most recently led mobile devices within Fulfillment, Transportation, and Robotics, overseeing $500M+ in investments.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div>
+          <div class="team-photo-placeholder">JS</div>
+          <p class="team-photo-note">Coming soon</p>
+        </div>
+        <div class="team-info">
+          <p class="team-name">James Stewart</p>
+          <p class="team-title">Lead Engineer</p>
+          <p class="team-bio placeholder">Bio coming soon.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="cta-band">
+      <h2>Curious to talk with us directly?</h2>
+      <p>We're early, and this works best as a two-way build. If you're up for that, let's talk.</p>
+      <a class="btn" href="/contact.html">Let's partner</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-nav">
+      <a href="/how-it-works.html" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">How it works</a>
+      <a href="/about.html" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">About us</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    
+    <div class="foot-copy">
+      <img src="/assets/heart-mark.png" alt="">
+      © <span id="copyright-year">2026</span> Arthos AI, Inc.
+      <img src="/assets/heart-mark.png" alt="">
+    </div>
+  </div>
+</footer>
+<script>
+  var yearEl = document.getElementById('copyright-year');
+  if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
+</script>
+</body>
+</html>
