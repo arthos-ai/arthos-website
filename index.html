@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Arthos AI — Automatic Knowledge Conflict Detection</title>
-    <meta name="description" content="Arthos surfaces the contradictions already hiding in your organization's knowledge, so you can make an intentional choice instead of an accidental one.">
+    <title>Arthos AI | The trusted knowledge layer</title>
+    <meta name="description" content="Arthos turns the sources your organization already uses into connected, versioned facts, so teams and AI tools work from the same trusted knowledge.">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Arthos AI — Automatic Knowledge Conflict Detection">
-    <meta property="og:description" content="Arthos surfaces the contradictions already hiding in your organization's knowledge, so you can make an intentional choice instead of an accidental one.">
+    <meta property="og:title" content="Arthos AI | The trusted knowledge layer">
+    <meta property="og:description" content="Arthos turns the sources your organization already uses into connected, versioned facts, so teams and AI tools work from the same trusted knowledge.">
     <meta name="image" property="og:image" content="https://arthos.ai/assets/og.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -21,8 +21,8 @@
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Arthos AI — Automatic Knowledge Conflict Detection">
-    <meta name="twitter:description" content="Arthos surfaces the contradictions already hiding in your organization's knowledge, so you can make an intentional choice instead of an accidental one.">
+    <meta name="twitter:title" content="Arthos AI | The trusted knowledge layer">
+    <meta name="twitter:description" content="Arthos turns the sources your organization already uses into connected, versioned facts, so teams and AI tools work from the same trusted knowledge.">
     <meta name="twitter:image" content="https://arthos.ai/assets/og.png">
 
     <!-- Favicon -->
@@ -251,6 +251,49 @@
     margin: 0;
   }
 
+  /* --- prose (multi-paragraph body copy sections) --- */
+  .prose p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-dim);
+    max-width: 68ch;
+    margin: 0 0 20px;
+  }
+
+  .prose p:last-child { margin-bottom: 0; }
+
+  .callout {
+    border-left: 3px solid var(--accent);
+    padding: 4px 0 4px 24px;
+    margin: 32px 0 28px;
+    max-width: 68ch;
+  }
+
+  .callout p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-dim);
+    margin: 0;
+  }
+
+  .pullquote {
+    font-size: clamp(1.3rem, 1.9vw, 1.6rem);
+    line-height: 1.45;
+    color: var(--text);
+    max-width: 46ch;
+    margin: 32px 0 28px;
+    text-wrap: balance;
+  }
+
+  .pullquote::before {
+    content: "";
+    display: block;
+    width: 44px;
+    height: 2px;
+    background: var(--accent);
+    margin-bottom: 18px;
+  }
+
   /* --- use cases (parallel, not sequential: cards) --- */
   .usecase-row {
     display: grid;
@@ -429,76 +472,84 @@
     </div>
     <div>
       <p class="eyebrow">Now onboarding design partners</p>
-      <h1>The truth is changing all the time. Arthos keeps you ahead of it.</h1>
-      <p class="hero-sub">What's true today can be outdated tomorrow. Arthos traces everything you rely on back to its source, and flags the moment two things start to contradict each other.</p>
+      <h1>Knowledge drifts out of sync.<br>Arthos gives you one place to get the current answer.</h1>
+      <p class="hero-sub">Arthos is a trusted knowledge layer. It connects to the tools your teams already use and keeps the knowledge across them up to date. With Arthos, every decision starts from the current answer. You can see what a decision affects before you make it.</p>
       <a class="btn" href="/contact.html">Let's partner</a>
     </div>
   </div>
 </header>
 
-<section class="block" id="how-it-works-preview">
+<section class="block">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">From drift to resolution</p>
-      <h2>What happens when something doesn't line up.</h2>
+      <p class="eyebrow">The problem</p>
+      <h2>Knowledge drifts out of sync faster than anyone can keep up.</h2>
     </div>
-    <div class="arc-row">
-      <div class="arc-step">
-        <p class="arc-num mono">01</p>
-        <p class="arc-tag">Detect</p>
-        <p class="arc-body">Arthos flags a contradiction the moment it exists. You're not left to discover it only when you need the answer.</p>
-      </div>
-      <div class="arc-step">
-        <p class="arc-num mono">02</p>
-        <p class="arc-tag">Triage</p>
-        <p class="arc-body">Not every difference is a real conflict. Arthos tells you which ones are, so your team spends time only on what matters.</p>
-      </div>
-      <div class="arc-step">
-        <p class="arc-num mono">03</p>
-        <p class="arc-tag">Decide</p>
-        <p class="arc-body">A person decides which version is true. Arthos surfaces the conflict. It doesn't hand down the verdict.</p>
-      </div>
-      <div class="arc-step">
-        <p class="arc-num mono">04</p>
-        <p class="arc-tag">Resolve</p>
-        <p class="arc-body">That decision becomes the answer going forward. It's always traceable back to its source. Never a black box.</p>
-      </div>
+    <div class="prose">
+      <p>Decisions supersede earlier decisions. Plans, policies, and processes get revised, often somewhere other than where the original lives. Both versions stay in circulation, and neither says which one still holds.</p>
+      <p>Every change also has implications. When one fact changes, the facts and decisions built on it have to change too, but nothing records those relationships. So teams coordinate by hand or work from facts that are no longer true, and that shows up as cost, delays, rework, and customers getting mixed answers.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Why now</p>
+      <h2>The problem isn't new. The stakes are.</h2>
+    </div>
+    <div class="prose">
+      <p>People have always kept an organization's knowledge in line. Someone notices a document is out of date. Someone knows who to ask, or catches that two things don't line up. It was never efficient, but it mostly worked.</p>
+      <p>Now knowledge changes faster than people can track. Teams produce more plans, documents, and decisions than ever. AI tools read those same sources and act on them, without a person's judgment. So more work gets built on information that's no longer current. It travels further before anyone notices: into other teams' work, into what ships, and into what customers are told.</p>
+    </div>
+    <p class="pullquote">By the time it surfaces, fixing it costs far more than catching it would have.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Why existing tools fall short</p>
+      <h2>Finding knowledge is solved. Keeping it correct is not.</h2>
+    </div>
+    <div class="prose">
+      <p>Shared drives, wikis, and search tools are good at storing information and returning what matches a search. But they treat every document as if it stands on its own. They can tell you when a document was last edited. They can't tell you whether what's in it still holds, how it relates to everything else, or what's affected when it changes.</p>
+      <p>So even when you find an answer, you can't be sure it's still right.</p>
+    </div>
+    <p class="pullquote">The gap isn't finding knowledge. It's trusting it.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What Arthos is</p>
+      <h2>A trusted knowledge layer your whole organization can rely on.</h2>
+    </div>
+    <div class="prose">
+      <p>Arthos connects to the drives, wikis, and ticketing systems your teams already use. It extracts the policies, requirements, and decisions inside them. It keeps track of where each one came from, how it has changed, and what depends on it.</p>
+      <p>That changes how decisions get made.</p>
+    </div>
+    <div class="callout">
+      <p>Say your product team wants to shorten a warranty from two years to one. Before the change goes out, Arthos shows everything built on the current policy. That includes the support team's help articles, the sales contract template, the training guide, and the answers your chatbot gives. You can see which teams will need to act and what they'll need to change. Once you approve the change, Arthos takes care of the rest.</p>
+    </div>
+    <div class="prose">
+      <p>Arthos also flags when two sources disagree, while it's still easy to fix. Your team sees the evidence behind each version and decides which one holds.</p>
+      <p>The result is one place to get the current answer. Everyone works from the same facts, and so do your AI tools. Decisions start from the latest policy. The teams they affect know in advance. And less work gets redone after the fact.</p>
+      <p>Nothing gets migrated or replaced. Your sources stay where they are, and the knowledge inside them stays connected and current.</p>
     </div>
   </div>
 </section>
 
 <div class="quiet-link">
-  <a href="/how-it-works.html">How it works &rarr;</a>
+  <a href="/how-it-works.html">See how it works &rarr;</a>
 </div>
 
 <section class="block">
   <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Where this shows up</p>
-      <h2>A few places knowledge quietly stops agreeing with itself.</h2>
-    </div>
-    <div class="usecase-row">
-      <div class="usecase-card">
-        <h3>Regulatory &amp; ordinance changes</h3>
-        <p>A city updates a zoning or safety code, and different departments' procedures haven't caught up with each other or with the new rule.</p>
-      </div>
-      <div class="usecase-card">
-        <h3>M&amp;A integration</h3>
-        <p>Two merging companies' HR, accounting, and ops policies say different things about the same question, and no one's reconciled them yet.</p>
-      </div>
-      <div class="usecase-card">
-        <h3>Franchise continuity</h3>
-        <p>A franchise spanning multiple writers, years, and formats accumulates details that quietly contradict earlier canon long before a fan or reviewer catches it.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="block" id="contact-preview">
-  <div class="wrap">
     <div class="cta-band">
       <h2>Let's build this together</h2>
-      <p>We're early, and this works best as a two-way build. Help us learn how you want conflicts like this surfaced and resolved. We'll handle the rest. If you're up for that, let's talk.</p>
+      <p>We're early, and this works best as a two-way build. Help us learn how your teams want to keep knowledge connected and correct. We'll handle the rest. If you're up for that, let's talk.</p>
       <a class="btn" href="/contact.html">Let's partner</a>
     </div>
   </div>
