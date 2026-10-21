@@ -92,6 +92,7 @@
     background: #FFFFFF;
     box-shadow: 0 8px 24px rgba(17, 20, 24, .06);
   }
+  form.contact-form[hidden] { display: none; }
 
   .honeypot-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 
@@ -135,8 +136,39 @@
     font-size: 15px;
     line-height: 1.5;
   }
-  .form-status.success { background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); color: #1a7a3d; }
   .form-status.error { background: rgba(217, 83, 11, 0.08); border: 1px solid rgba(217, 83, 11, 0.3); color: var(--req); }
+
+  .form-confirm {
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 40px 36px;
+    background: #F6F7F9;
+    text-align: center;
+  }
+  .form-confirm .tag {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--acted);
+    margin: 0 0 12px;
+  }
+  .form-confirm h2 {
+    margin: 0 0 12px;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .form-confirm p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--body-text);
+  }
 
   footer.site-foot { border-top: 1px solid var(--border); }
   footer.site-foot .wrap { padding: 40px 24px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 14px; color: var(--muted); }
@@ -172,7 +204,7 @@
 </nav>
 
 <div class="contact-row">
-  <div class="contact-copy">
+  <div id="contact-copy" class="contact-copy">
     <h1>Let's partner.</h1>
     <p>Tell us where knowledge drifts in your organization. We'll show you what we're building, and how you can help shape it.</p>
     <div class="dots partner-note">
@@ -181,10 +213,14 @@
     </div>
   </div>
 
-  <div id="form-success" class="form-status success" hidden style="flex: 1 1 480px; min-width: 0">Thanks for reaching out. We'll get back to you soon.</div>
-  <div id="form-error" class="form-status error" hidden style="flex: 1 1 480px; min-width: 0">Something went wrong sending that. Please try again, or email us directly.</div>
+  <div id="form-confirm" class="form-confirm" hidden>
+    <span class="tag">Message received</span>
+    <h2>Thanks &mdash; we got your message.</h2>
+    <p>We'll follow up with next steps ASAP.</p>
+  </div>
 
   <form id="contact-form" class="contact-form" action="https://formspree.io/f/mdkljvvg" method="POST">
+    <div id="form-error" class="form-status error" hidden>Something went wrong sending that. Please try again, or email us directly.</div>
     <div class="honeypot-field">
       <label for="website">Website (leave blank)</label>
       <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
@@ -228,7 +264,8 @@
 <script>
   (function () {
     var form = document.getElementById('contact-form');
-    var successMsg = document.getElementById('form-success');
+    var contactCopy = document.getElementById('contact-copy');
+    var confirmCard = document.getElementById('form-confirm');
     var errorMsg = document.getElementById('form-error');
     var submitBtn = document.getElementById('submit-btn');
 
@@ -238,7 +275,6 @@
 
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
-      successMsg.hidden = true;
       errorMsg.hidden = true;
 
       var honeypot = document.getElementById('website').value.trim();
@@ -265,8 +301,10 @@
           headers: { 'Accept': 'application/json' }
         });
         if (res.ok) {
-          successMsg.hidden = false;
           form.reset();
+          form.hidden = true;
+          contactCopy.hidden = true;
+          confirmCard.hidden = false;
         } else {
           throw new Error('bad response');
         }
