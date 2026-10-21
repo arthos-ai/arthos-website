@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Arthos AI | The trusted knowledge layer</title>
-    <meta name="description" content="Arthos turns the sources your organization already uses into connected, versioned facts, so teams and AI tools work from the same trusted knowledge.">
+    <title>Arthos AI | Knowledge drifts. Arthos catches it.</title>
+    <meta name="description" content="Arthos works alongside your tools to build a trusted knowledge layer. Your organization and your AI get answers you can rely on, so you can move fast with confidence.">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Arthos AI | The trusted knowledge layer">
-    <meta property="og:description" content="Arthos turns the sources your organization already uses into connected, versioned facts, so teams and AI tools work from the same trusted knowledge.">
+    <meta property="og:title" content="Arthos AI | Knowledge drifts. Arthos catches it.">
+    <meta property="og:description" content="Arthos works alongside your tools to build a trusted knowledge layer. Your organization and your AI get answers you can rely on, so you can move fast with confidence.">
     <meta name="image" property="og:image" content="https://arthos.ai/assets/og.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -21,8 +21,8 @@
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Arthos AI | The trusted knowledge layer">
-    <meta name="twitter:description" content="Arthos turns the sources your organization already uses into connected, versioned facts, so teams and AI tools work from the same trusted knowledge.">
+    <meta name="twitter:title" content="Arthos AI | Knowledge drifts. Arthos catches it.">
+    <meta name="twitter:description" content="Arthos works alongside your tools to build a trusted knowledge layer. Your organization and your AI get answers you can rely on, so you can move fast with confidence.">
     <meta name="twitter:image" content="https://arthos.ai/assets/og.png">
 
     <!-- Favicon -->
@@ -31,19 +31,21 @@
     <!-- Preconnect for Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Armata&family=IBM+Plex+Mono:wght@400;500&display=swap');
-
   :root {
-    --bg: #1c1916;
-    --bg-raise: #23201c;
-    --card: #363026;
-    --text: #e6ebf1;
-    --text-dim: rgba(230, 235, 241, 0.78);
-    --text-faint: rgba(230, 235, 241, 0.70);
-    --accent: #6fa5c3;
-    --accent-dim: rgba(111, 165, 195, 0.16);
-    --line: rgba(230, 235, 241, 0.09);
+    --ink: #111418;
+    --body-text: #3D4550;
+    --muted: #5B6470;
+    --faint: #AEB5BF;
+    --border: #E6E9ED;
+    --border-strong: #AEB5BF;
+    --bg: #FFFFFF;
+    --bg-light: #F6F7F9;
+    --bg-lighter: #F1F3F6;
+    --changed: #D9530B;
+    --changed-text: #B8460A;
+    --acted: #1F5FD1;
   }
 
   * { box-sizing: border-box; }
@@ -51,36 +53,28 @@
   body {
     margin: 0;
     background: var(--bg);
-    color: var(--text);
-    font-family: 'Armata', sans-serif;
+    color: var(--ink);
+    font-family: 'Instrument Sans', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
 
-  .wrap {
-    max-width: 1160px;
-    margin: 0 auto;
-    padding: 0 28px;
+  a { color: var(--ink); text-decoration: none; }
+  a:hover { color: var(--acted); }
+
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+
+  .dots {
+    background-color: #FAFBFC;
+    background-image: radial-gradient(#C9CED6 1px, transparent 1px);
+    background-size: 18px 18px;
   }
 
-  .mono {
-    font-family: 'IBM Plex Mono', monospace;
-  }
-
-  .eyebrow {
-    font-family: 'IBM Plex Mono', monospace;
-    font-weight: 500;
-    font-size: 0.92rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin: 0 0 16px;
-  }
-
-  a { color: inherit; }
+  [hidden] { display: none !important; }
 
   /* --- nav --- */
   nav.site-nav {
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid var(--border);
     position: sticky;
     top: 0;
     z-index: 20;
@@ -91,348 +85,440 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 74px;
-    gap: 24px;
+    padding: 18px 24px;
+    gap: 16px;
+    flex-wrap: wrap;
   }
 
   .nav-brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    font-size: 1.05rem;
-    letter-spacing: 0.01em;
-  }
-
-  .nav-brand img {
-    width: 20px;
-    height: 20px;
-    display: block;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
 
   .nav-links {
     display: flex;
     align-items: center;
     gap: 28px;
-    font-size: 0.92rem;
-  }
-
-  .nav-links a {
-    text-decoration: none;
-    color: var(--text-dim);
-    transition: color 0.15s ease;
-  }
-
-  .nav-links a:hover,
-  .nav-links a:focus-visible {
-    color: var(--text);
+    flex-wrap: wrap;
+    font-size: 15px;
   }
 
   .nav-cta {
-    border: 1px solid rgba(111, 165, 195, 0.55);
-    border-radius: 999px;
-    padding: 8px 18px !important;
-    color: var(--accent) !important;
+    background: var(--ink);
+    color: #FFFFFF !important;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-weight: 600;
   }
 
-  .nav-cta:hover,
-  .nav-cta:focus-visible {
-    background: var(--accent-dim);
+  .nav-cta:hover { color: #FFFFFF !important; opacity: 0.9; }
+
+  /* --- buttons --- */
+  .btn {
+    display: inline-block;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 15px 22px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
   }
+
+  .btn-dark { background: var(--ink); color: #FFFFFF !important; }
+  .btn-dark:hover { color: #FFFFFF !important; opacity: 0.9; }
+  .btn-outline { border: 1px solid #C9CED6; color: var(--ink) !important; }
+  .btn-outline:hover { border-color: var(--ink); color: var(--ink) !important; }
+  .btn-light { background: #FFFFFF; color: var(--ink) !important; }
+  .btn-light:hover { opacity: 0.9; color: var(--ink) !important; }
 
   /* --- hero --- */
-  .hero {
-    padding: 72px 0 88px;
+  .hero { padding: 88px 0 64px; }
+  .hero-copy { max-width: 820px; }
+
+  .hero h1 {
+    margin: 0;
+    font-size: clamp(44px, 6vw, 76px);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+    font-weight: 600;
+    text-wrap: balance;
   }
 
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 0.85fr 1.15fr;
+  .hero-sub {
+    margin: 28px 0 0;
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--body-text);
+    max-width: 680px;
+  }
+
+  .hero-ctas { margin-top: 36px; display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .hero-founders {
+    margin: 20px 0 0;
+    font-size: 15px;
+    color: var(--muted);
+  }
+
+  .hero-map {
+    margin-top: 56px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    padding: 48px 40px 24px;
+  }
+
+  /* --- section scaffolding --- */
+  .section { padding: 96px 0; }
+  .section-bordered { border-top: 1px solid var(--border); }
+
+  .section h2 {
+    margin: 0;
+    max-width: 820px;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    font-weight: 600;
+    text-wrap: balance;
+  }
+
+  .section p.lead {
+    margin: 20px 0 0;
+    max-width: 640px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--body-text);
+  }
+
+  /* --- problem section --- */
+  .problem-row {
+    display: flex;
+    flex-wrap: wrap;
     gap: 56px;
     align-items: center;
   }
 
-  .hero-logo img {
-    width: 100%;
-    max-width: 320px;
-    height: auto;
-    display: block;
+  .problem-copy { flex: 1 1 420px; min-width: 0; }
+  .problem-copy p {
+    margin: 24px 0 0;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--body-text);
   }
 
-  .hero h1 {
-    font-weight: 400;
-    font-size: clamp(1.9rem, 3.4vw, 2.7rem);
-    line-height: 1.28;
-    letter-spacing: -0.01em;
-    margin: 0 0 20px;
-    text-wrap: balance;
-    max-width: 20ch;
+  .problem-timeline {
+    flex: 1 1 480px;
+    min-width: 0;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px 28px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
 
-  .hero-sub {
-    font-size: 1.05rem;
-    line-height: 1.65;
-    color: var(--text-dim);
-    max-width: 46ch;
-    margin: 0 0 32px;
-  }
-
-  .btn {
-    display: inline-block;
-    font-family: 'Armata', sans-serif;
-    background: var(--accent);
-    color: #14110f;
-    border: none;
-    padding: 15px 30px;
+  .ichip {
+    background: #FFFFFF;
+    border: 1.5px solid var(--border-strong);
     border-radius: 8px;
-    font-size: 1rem;
-    text-decoration: none;
-    cursor: pointer;
-    transition: transform 0.1s ease, opacity 0.15s ease;
-  }
-
-  .btn:hover,
-  .btn:focus-visible { opacity: 0.9; }
-  .btn:active { transform: scale(0.98); }
-
-  /* --- section scaffolding --- */
-  section.block {
-    padding: 76px 0;
-    border-top: 1px solid var(--line);
-  }
-
-  .section-head {
-    max-width: 60ch;
-    margin: 0 0 40px;
-  }
-
-  .section-head h2 {
-    font-weight: 400;
-    font-size: clamp(1.35rem, 2vw, 1.7rem);
-    margin: 0;
+    padding: 8px 10px;
+    font-size: 16px;
     line-height: 1.3;
-    text-wrap: balance;
+    color: var(--ink);
   }
 
-  /* --- arc (sequence: real order, numbered) --- */
-  .arc-row {
+  .ichip .tag { display: block; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+  .ichip-flagged { align-self: flex-start; border-color: var(--changed); border-width: 2px; }
+  .ichip-flagged .tag { color: var(--changed-text); }
+
+  .problem-trail {
+    margin-left: 20px;
+    padding-left: 24px;
+    border-left: 2px dashed var(--border-strong);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .problem-trail-label { font-size: 15px; color: var(--body-text); }
+
+  .problem-punch {
+    font-size: clamp(16px, 1.6vw, 20px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  /* --- tabs --- */
+  .tabs-row { margin-top: 48px; display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start; }
+  .tabs-list { flex: 0 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+
+  .tabbtn {
+    font: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    text-align: left;
+    min-height: 44px;
+    padding: 16px 18px;
+    border-radius: 6px;
+    border: 1px solid #D9DDE3;
+    background: #FFFFFF;
+    color: var(--ink);
+    cursor: pointer;
+  }
+
+  .tabbtn:hover { border-color: var(--ink); }
+  .tabbtn.on { background: var(--ink); color: #FFFFFF; border-color: var(--ink); }
+  .tabbtn.on .tbd { color: #D9DDE3; }
+  .tabbtn .tbt { font-size: 18px; font-weight: 600; }
+  .tabbtn .tbd { font-size: 15px; line-height: 1.45; color: var(--body-text); }
+
+  .tabs-panel { flex: 1 1 560px; min-width: 0; }
+  .tabpanel-body { min-width: 0; display: flex; flex-direction: column; gap: 14px; }
+
+  .who {
+    margin-top: 14px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
   }
 
-  .arc-step {
-    position: relative;
-    padding: 4px 26px 4px 0;
-  }
-
-  .arc-step + .arc-step {
-    border-left: 1px solid var(--line);
-    padding-left: 26px;
-  }
-
-  .arc-num {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.78rem;
-    color: var(--text-faint);
-    margin-bottom: 10px;
-  }
-
-  .arc-tag {
-    font-size: 1.02rem;
-    color: var(--accent);
-    margin: 0 0 10px;
-  }
-
-  .arc-body {
-    font-size: 0.94rem;
-    line-height: 1.6;
-    color: var(--text-dim);
-    margin: 0;
-  }
-
-  /* --- prose (multi-paragraph body copy sections) --- */
-  .prose p {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: var(--text-dim);
-    max-width: 68ch;
-    margin: 0 0 20px;
-  }
-
-  .prose p:last-child { margin-bottom: 0; }
-
-  .callout {
-    border-left: 3px solid var(--accent);
-    padding: 4px 0 4px 24px;
-    margin: 32px 0 28px;
-    max-width: 68ch;
-  }
-
-  .callout p {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: var(--text-dim);
-    margin: 0;
-  }
-
-  .pullquote {
-    font-size: clamp(1.3rem, 1.9vw, 1.6rem);
+  .whoc {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 16px;
     line-height: 1.45;
-    color: var(--text);
-    max-width: 46ch;
-    margin: 32px 0 28px;
-    text-wrap: balance;
+    color: var(--ink);
   }
 
-  .pullquote::before {
-    content: "";
-    display: block;
-    width: 44px;
-    height: 2px;
-    background: var(--accent);
-    margin-bottom: 18px;
+  .whoc .tag { display: block; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+
+  .stage-card { border: 1px solid var(--border); border-radius: 16px; background: #FFFFFF; overflow: hidden; }
+  .stage-cap { text-align: center; font-size: clamp(15px, 1.5vw, 20px); font-weight: 700; letter-spacing: -0.02em; color: var(--ink); }
+
+  /* --- chips used inside animated stages --- */
+  .chip {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background: #FFFFFF;
+    border: 1.5px solid var(--border-strong);
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 13px;
+    line-height: 1.3;
+    color: var(--ink);
+    width: max-content;
+    max-width: 190px;
+    box-shadow: 0 1px 2px rgba(17, 20, 24, .06);
   }
 
-  /* --- use cases (parallel, not sequential: cards) --- */
-  .usecase-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+  .chip .tag { display: block; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+  .pill {
+    position: absolute;
+    top: -0.95em;
+    right: .8em;
+    background: var(--acted);
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 600;
+    padding: .3em .7em;
+    border-radius: 999px;
+    white-space: nowrap;
   }
 
-  .usecase-card {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 26px 24px;
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  /* --- Impact tab stage (16s loop) --- */
+  .bstage { position: relative; aspect-ratio: 160/80; max-width: 1120px; margin: 0 auto; font-size: clamp(8px, .85vw, 13px); padding: 20px 14px 8px; }
+  .bstage .chip { font-size: 1em; max-width: none; width: 20%; height: 5.4em; padding: .6em .85em; border-radius: 10px; z-index: 1; display: flex; flex-direction: column; justify-content: center; border-width: 2px; }
+  .bstage .pill { font-size: .66em; }
+  .bd { stroke-dasharray: 1; stroke-dashoffset: 1; }
+
+  @keyframes bProp { 0%,4% { opacity: 0; transform: translate(-50%,-50%) scale(.9); } 9% { opacity: 1; transform: translate(-50%,-50%) scale(1.14); } 15%,90% { opacity: 1; transform: translate(-50%,-50%) scale(1.06); } 96%,100% { opacity: 0; transform: translate(-50%,-50%) scale(1); } }
+  @keyframes bD1 { 0%,12% { stroke-dashoffset: 1; opacity: 1; } 18%,90% { stroke-dashoffset: 0; opacity: 1; } 95% { stroke-dashoffset: 0; opacity: 0; } 96%,100% { stroke-dashoffset: 1; opacity: 0; } }
+  @keyframes bD2 { 0%,18% { stroke-dashoffset: 1; opacity: 1; } 24%,90% { stroke-dashoffset: 0; opacity: 1; } 95% { stroke-dashoffset: 0; opacity: 0; } 96%,100% { stroke-dashoffset: 1; opacity: 0; } }
+  @keyframes bD3 { 0%,24% { stroke-dashoffset: 1; opacity: 1; } 30%,90% { stroke-dashoffset: 0; opacity: 1; } 95% { stroke-dashoffset: 0; opacity: 0; } 96%,100% { stroke-dashoffset: 1; opacity: 0; } }
+  @keyframes bD4 { 0%,30% { stroke-dashoffset: 1; opacity: 1; } 36%,90% { stroke-dashoffset: 0; opacity: 1; } 95% { stroke-dashoffset: 0; opacity: 0; } 96%,100% { stroke-dashoffset: 1; opacity: 0; } }
+  @keyframes bDT { 0%,44% { stroke-dashoffset: 1; opacity: 1; } 52%,90% { stroke-dashoffset: 0; opacity: 1; } 95% { stroke-dashoffset: 0; opacity: 0; } 96%,100% { stroke-dashoffset: 1; opacity: 0; } }
+  @keyframes bE1 { 0%,18% { transform: translate(-50%,-50%) scale(1); border-color: var(--border-strong); } 22% { transform: translate(-50%,-50%) scale(1.12); border-color: var(--acted); } 28%,90% { transform: translate(-50%,-50%) scale(1.05); border-color: var(--acted); } 96%,100% { transform: translate(-50%,-50%) scale(1); border-color: var(--border-strong); } }
+  @keyframes bE2 { 0%,24% { transform: translate(-50%,-50%) scale(1); border-color: var(--border-strong); } 28% { transform: translate(-50%,-50%) scale(1.12); border-color: var(--acted); } 34%,90% { transform: translate(-50%,-50%) scale(1.05); border-color: var(--acted); } 96%,100% { transform: translate(-50%,-50%) scale(1); border-color: var(--border-strong); } }
+  @keyframes bE3 { 0%,30% { transform: translate(-50%,-50%) scale(1); border-color: var(--border-strong); } 34% { transform: translate(-50%,-50%) scale(1.12); border-color: var(--acted); } 40%,90% { transform: translate(-50%,-50%) scale(1.05); border-color: var(--acted); } 96%,100% { transform: translate(-50%,-50%) scale(1); border-color: var(--border-strong); } }
+  @keyframes bE4 { 0%,36% { transform: translate(-50%,-50%) scale(1); border-color: var(--border-strong); } 40% { transform: translate(-50%,-50%) scale(1.12); border-color: var(--acted); } 46%,90% { transform: translate(-50%,-50%) scale(1.05); border-color: var(--acted); } 96%,100% { transform: translate(-50%,-50%) scale(1); border-color: var(--border-strong); } }
+  @keyframes bP1 { 0%,19% { opacity: 0; transform: translateY(4px); } 24%,90% { opacity: 1; transform: translateY(0); } 95%,100% { opacity: 0; } }
+  @keyframes bP2 { 0%,25% { opacity: 0; transform: translateY(4px); } 30%,90% { opacity: 1; transform: translateY(0); } 95%,100% { opacity: 0; } }
+  @keyframes bP3 { 0%,31% { opacity: 0; transform: translateY(4px); } 36%,90% { opacity: 1; transform: translateY(0); } 95%,100% { opacity: 0; } }
+  @keyframes bP4 { 0%,37% { opacity: 0; transform: translateY(4px); } 42%,90% { opacity: 1; transform: translateY(0); } 95%,100% { opacity: 0; } }
+  @keyframes bT1 { 0%,50% { transform: translate(-50%,-50%) scale(1); border-color: #D9DDE3; background: #FFFFFF; } 54% { transform: translate(-50%,-50%) scale(1.12); border-color: var(--ink); background: var(--bg-lighter); } 60%,90% { transform: translate(-50%,-50%) scale(1.05); border-color: var(--ink); background: var(--bg-lighter); } 96%,100% { transform: translate(-50%,-50%) scale(1); border-color: #D9DDE3; background: #FFFFFF; } }
+  @keyframes bT2 { 0%,53% { transform: translate(-50%,-50%) scale(1); border-color: #D9DDE3; background: #FFFFFF; } 57% { transform: translate(-50%,-50%) scale(1.12); border-color: var(--ink); background: var(--bg-lighter); } 63%,90% { transform: translate(-50%,-50%) scale(1.05); border-color: var(--ink); background: var(--bg-lighter); } 96%,100% { transform: translate(-50%,-50%) scale(1); border-color: #D9DDE3; background: #FFFFFF; } }
+  @keyframes bT3 { 0%,56% { transform: translate(-50%,-50%) scale(1); border-color: #D9DDE3; background: #FFFFFF; } 60% { transform: translate(-50%,-50%) scale(1.12); border-color: var(--ink); background: var(--bg-lighter); } 66%,90% { transform: translate(-50%,-50%) scale(1.05); border-color: var(--ink); background: var(--bg-lighter); } 96%,100% { transform: translate(-50%,-50%) scale(1); border-color: #D9DDE3; background: #FFFFFF; } }
+  @keyframes bT4 { 0%,59% { transform: translate(-50%,-50%) scale(1); border-color: #D9DDE3; background: #FFFFFF; } 63% { transform: translate(-50%,-50%) scale(1.12); border-color: var(--ink); background: var(--bg-lighter); } 69%,90% { transform: translate(-50%,-50%) scale(1.05); border-color: var(--ink); background: var(--bg-lighter); } 96%,100% { transform: translate(-50%,-50%) scale(1); border-color: #D9DDE3; background: #FFFFFF; } }
+  @keyframes bCap { 0%,70% { opacity: 0; transform: translateY(8px); } 75%,90% { opacity: 1; transform: translateY(0); } 95%,100% { opacity: 0; transform: translateY(0); } }
+
+  .b-prop { animation: bProp 16s ease-in-out infinite; }
+  .b-d1 { animation: bD1 16s ease-in-out infinite; } .b-d2 { animation: bD2 16s ease-in-out infinite; }
+  .b-d3 { animation: bD3 16s ease-in-out infinite; } .b-d4 { animation: bD4 16s ease-in-out infinite; }
+  .b-dt { animation: bDT 16s ease-in-out infinite; }
+  .b-e1 { animation: bE1 16s ease-in-out infinite; } .b-e2 { animation: bE2 16s ease-in-out infinite; }
+  .b-e3 { animation: bE3 16s ease-in-out infinite; } .b-e4 { animation: bE4 16s ease-in-out infinite; }
+  .b-p1 { animation: bP1 16s ease-out infinite; } .b-p2 { animation: bP2 16s ease-out infinite; }
+  .b-p3 { animation: bP3 16s ease-out infinite; } .b-p4 { animation: bP4 16s ease-out infinite; }
+  .b-t1 { animation: bT1 16s ease-in-out infinite; } .b-t2 { animation: bT2 16s ease-in-out infinite; }
+  .b-t3 { animation: bT3 16s ease-in-out infinite; } .b-t4 { animation: bT4 16s ease-in-out infinite; }
+  .bcap { animation: bCap 16s ease-out infinite; margin: 6px 0 10px; }
+
+  /* --- Tracking tab stage (plays once) --- */
+  .trstage { position: relative; aspect-ratio: 160/70; max-width: 1120px; margin: 0 auto; font-size: clamp(8px, .85vw, 13px); padding: 28px 14px 10px; }
+  .trstage .chip { font-size: 1em; max-width: none; width: 24%; height: 4.4em; padding: .6em .85em; border-radius: 10px; z-index: 1; display: flex; flex-direction: column; justify-content: center; border-width: 2px; }
+  .tl { stroke-dasharray: 1; stroke-dashoffset: 1; }
+
+  @keyframes trIn { 0% { opacity: 0; transform: translate(-50%,-50%) scale(.85); } 60% { opacity: 1; transform: translate(-50%,-50%) scale(1.08); } 100% { opacity: 1; transform: translate(-50%,-50%) scale(1); } }
+  @keyframes trDraw { 0% { stroke-dashoffset: 1; } 100% { stroke-dashoffset: 0; } }
+  @keyframes trFact { 0% { transform: translate(-50%,-50%) scale(1); } 50% { transform: translate(-50%,-50%) scale(1.14); } 100% { transform: translate(-50%,-50%) scale(1.06); } }
+  @keyframes trFade { 0% { opacity: 0; transform: translateY(6px); } 100% { opacity: 1; transform: translateY(0); } }
+
+  .tr-s1 { animation: trIn .7s ease-out .16s both; } .tr-l1 { animation: trDraw .84s ease-in-out .64s both; }
+  .tr-s2 { animation: trIn .7s ease-out .64s both; } .tr-l2 { animation: trDraw .84s ease-in-out 1.1s both; }
+  .tr-s3 { animation: trIn .7s ease-out 1.1s both; } .tr-l3 { animation: trDraw .84s ease-in-out 1.6s both; }
+  .tr-s4 { animation: trIn .7s ease-out 1.6s both; } .tr-l4 { animation: trDraw .84s ease-in-out 2.1s both; }
+  .tr-s5 { animation: trIn .7s ease-out 2.1s both; } .tr-l5 { animation: trDraw .84s ease-in-out 2.6s both; }
+  .tr-s6 { animation: trIn .7s ease-out 2.6s both; } .tr-l6 { animation: trDraw .84s ease-in-out 3s both; }
+  .tr-f { animation: trFact .84s ease-out 4s both; }
+  .tr-n { animation: trFade .56s ease-out 4.2s both; }
+  .tr-cap { animation: trFade .7s ease-out 5s both; margin: 10px 0 10px; }
+
+  .tr-fact-card { position: absolute; left: 50%; top: 50%; width: 32%; min-height: 6em; height: auto; border-color: var(--ink); background: #FFFFFF; }
+
+  /* --- Trusted-knowledge tab (plays once) --- */
+  @keyframes cIn { 0% { opacity: 0; transform: translateY(8px); } 100% { opacity: 1; transform: translateY(0); } }
+  .c-in1 { animation: cIn .5s ease-out both; }
+  .a-q { animation: cIn .7s ease-out both; }
+  .k-old { animation: cIn .7s ease-out .96s both; }
+  .a-ans { animation: cIn .7s ease-out 2.2s both; }
+  .k-rel { animation: cIn .7s ease-out 3.4s both; }
+  .a-src { animation: cIn .7s ease-out 4.5s both; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .b-prop, .b-d1, .b-d2, .b-d3, .b-d4, .b-dt, .b-e1, .b-e2, .b-e3, .b-e4, .b-p1, .b-p2, .b-p3, .b-p4, .b-t1, .b-t2, .b-t3, .b-t4, .bcap,
+    .ml, .mc, .mpill, .mcap span, .tr-s1, .tr-s2, .tr-s3, .tr-s4, .tr-s5, .tr-s6, .tl, .tr-f, .tr-n, .tr-cap,
+    .c-in1, .a-q, .k-old, .a-ans, .k-rel, .a-src {
+      animation-delay: -10s !important;
+      animation-play-state: paused !important;
+    }
   }
 
-  .usecase-card h3 {
-    font-weight: 400;
-    font-size: 1.05rem;
-    margin: 0 0 12px;
+  /* --- hero map stage (18s loop) --- */
+  .mstage { position: relative; aspect-ratio: 160/80; max-width: 1180px; margin: 0 auto; font-size: clamp(8px, 1.15vw, 15px); }
+  .mc { position: absolute; transform: translate(-50%,-50%); background: #FFFFFF; border: 2px solid var(--border-strong); border-radius: 10px; padding: .6em .8em; font-size: 1em; line-height: 1.3; color: var(--ink); box-sizing: border-box; z-index: 2; display: flex; flex-direction: column; justify-content: center; }
+  .mc .tag { font-size: .66em; margin-bottom: .35em; display: block; font-family: 'IBM Plex Mono', monospace; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+  .mr { width: 24%; height: 4.4em; }
+  .mf { width: 32%; min-height: 4.6em; }
+  .mband { position: absolute; background: var(--ink); border-radius: 14px; z-index: 1; display: flex; justify-content: center; }
+  .mbl { margin-top: .8em; font-family: "IBM Plex Mono", monospace; font-size: .92em; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: #FFFFFF; }
+  .mpill { position: absolute; bottom: -0.95em; left: 50%; transform: translateX(-50%); white-space: nowrap; background: var(--acted); color: #FFFFFF; font-size: .66em; font-weight: 600; padding: .3em .7em; border-radius: 999px; }
+  .ml { stroke-dasharray: 1; stroke-dashoffset: 1; }
+  .mcap { text-align: center; margin: 0 0 18px; font-size: clamp(17px,2vw,26px); font-weight: 700; letter-spacing: -0.02em; color: var(--ink); min-height: 1.4em; }
+  .stk { display: grid; } .stk > * { grid-area: 1/1; }
+  .mc .tag.stk { display: grid; }
+
+  @keyframes mDec { 0%,5% { transform: translate(-50%,-50%) scale(1); border-color: var(--border-strong); } 8% { transform: translate(-50%,-50%) scale(1.12); border-color: var(--changed); } 12%,92% { transform: translate(-50%,-50%) scale(1.04); border-color: var(--changed); } 97%,100% { transform: translate(-50%,-50%) scale(1); border-color: var(--border-strong); } }
+  @keyframes mDo { 0%,7% { opacity: 1; } 9%,94% { opacity: 0; } 98%,100% { opacity: 1; } }
+  @keyframes mDn { 0%,8% { opacity: 0; } 11%,92% { opacity: 1; } 94%,100% { opacity: 0; } }
+  @keyframes mL0 { 0%,11% { stroke-dashoffset: 1; opacity: 1; } 16%,92% { stroke-dashoffset: 0; opacity: 1; } 95% { stroke-dashoffset: 0; opacity: 0; } 96%,100% { stroke-dashoffset: 1; opacity: 0; } }
+  @keyframes mOld { 0%,18% { top: 40%; border-style: solid; opacity: 1; } 19% { border-style: dashed; } 27%,90% { top: 91%; border-style: dashed; opacity: 1; } 94% { top: 91%; opacity: 0; } 95%,97% { top: 40%; border-style: solid; opacity: 0; } 100% { top: 40%; border-style: solid; opacity: 1; } }
+  @keyframes mSp { 0%,27% { opacity: 0; } 30%,90% { opacity: 1; } 92%,100% { opacity: 0; } }
+  @keyframes mNew { 0%,20% { opacity: 0; transform: translate(-50%,-50%) translateX(-30%) scale(1); } 26% { opacity: 1; transform: translate(-50%,-50%) scale(1.12); } 31%,92% { opacity: 1; transform: translate(-50%,-50%) scale(1.04); } 96%,100% { opacity: 0; transform: translate(-50%,-50%) scale(1); } }
+  @keyframes mL1 { 0%,34% { stroke-dashoffset: 1; opacity: 1; } 38%,92% { stroke-dashoffset: 0; opacity: 1; } 95% { stroke-dashoffset: 0; opacity: 0; } 96%,100% { stroke-dashoffset: 1; opacity: 0; } }
+  @keyframes mL2 { 0%,42% { stroke-dashoffset: 1; opacity: 1; } 46%,92% { stroke-dashoffset: 0; opacity: 1; } 95% { stroke-dashoffset: 0; opacity: 0; } 96%,100% { stroke-dashoffset: 1; opacity: 0; } }
+  @keyframes mL3 { 0%,50% { stroke-dashoffset: 1; opacity: 1; } 54%,92% { stroke-dashoffset: 0; opacity: 1; } 95% { stroke-dashoffset: 0; opacity: 0; } 96%,100% { stroke-dashoffset: 1; opacity: 0; } }
+  @keyframes mL4 { 0%,58% { stroke-dashoffset: 1; opacity: 1; } 62%,92% { stroke-dashoffset: 0; opacity: 1; } 95% { stroke-dashoffset: 0; opacity: 0; } 96%,100% { stroke-dashoffset: 1; opacity: 0; } }
+  @keyframes mR1 { 0%,37% { transform: translate(-50%,-50%) scale(1); border-color: var(--border-strong); } 40% { transform: translate(-50%,-50%) scale(1.12); border-color: var(--acted); } 44%,92% { transform: translate(-50%,-50%) scale(1.04); border-color: var(--acted); } 97%,100% { transform: translate(-50%,-50%) scale(1); border-color: var(--border-strong); } }
+  @keyframes mR2 { 0%,45% { transform: translate(-50%,-50%) scale(1); border-color: var(--border-strong); } 48% { transform: translate(-50%,-50%) scale(1.12); border-color: var(--acted); } 52%,92% { transform: translate(-50%,-50%) scale(1.04); border-color: var(--acted); } 97%,100% { transform: translate(-50%,-50%) scale(1); border-color: var(--border-strong); } }
+  @keyframes mR3 { 0%,53% { transform: translate(-50%,-50%) scale(1); border-color: var(--border-strong); } 56% { transform: translate(-50%,-50%) scale(1.12); border-color: var(--acted); } 60%,92% { transform: translate(-50%,-50%) scale(1.04); border-color: var(--acted); } 97%,100% { transform: translate(-50%,-50%) scale(1); border-color: var(--border-strong); } }
+  @keyframes mR4 { 0%,61% { transform: translate(-50%,-50%) scale(1); border-color: var(--border-strong); } 64% { transform: translate(-50%,-50%) scale(1.12); border-color: var(--acted); } 68%,92% { transform: translate(-50%,-50%) scale(1.04); border-color: var(--acted); } 97%,100% { transform: translate(-50%,-50%) scale(1); border-color: var(--border-strong); } }
+  @keyframes mP1 { 0%,39% { opacity: 0; } 42%,92% { opacity: 1; } 94%,100% { opacity: 0; } }
+  @keyframes mP2 { 0%,47% { opacity: 0; } 50%,92% { opacity: 1; } 94%,100% { opacity: 0; } }
+  @keyframes mP3 { 0%,55% { opacity: 0; } 58%,92% { opacity: 1; } 94%,100% { opacity: 0; } }
+  @keyframes mAo { 0%,62% { opacity: 1; } 64%,94% { opacity: 0; } 98%,100% { opacity: 1; } }
+  @keyframes mAn { 0%,64% { opacity: 0; } 67%,92% { opacity: 1; } 94%,100% { opacity: 0; } }
+  @keyframes mC1 { 0%,3% { opacity: 0; } 6%,16% { opacity: 1; } 18%,100% { opacity: 0; } }
+  @keyframes mC2 { 0%,19% { opacity: 0; } 22%,33% { opacity: 1; } 35%,100% { opacity: 0; } }
+  @keyframes mC3 { 0%,36% { opacity: 0; } 39%,57% { opacity: 1; } 59%,100% { opacity: 0; } }
+  @keyframes mC4 { 0%,60% { opacity: 0; } 63%,76% { opacity: 1; } 78%,100% { opacity: 0; } }
+  @keyframes mC5 { 0%,79% { opacity: 0; } 82%,92% { opacity: 1; } 94%,100% { opacity: 0; } }
+
+  .m-dec { animation: mDec 18s ease-in-out infinite; }
+  .m-do { animation: mDo 18s ease-in-out infinite; } .m-dn { animation: mDn 18s ease-in-out infinite; }
+  .m-l0 { animation: mL0 18s ease-in-out infinite; }
+  .m-old { animation: mOld 18s ease-in-out infinite; } .m-sp { animation: mSp 18s ease-in-out infinite; } .m-new { animation: mNew 18s ease-in-out infinite; }
+  .m-l1 { animation: mL1 18s ease-in-out infinite; } .m-l2 { animation: mL2 18s ease-in-out infinite; }
+  .m-l3 { animation: mL3 18s ease-in-out infinite; } .m-l4 { animation: mL4 18s ease-in-out infinite; }
+  .m-r1 { animation: mR1 18s ease-in-out infinite; } .m-r2 { animation: mR2 18s ease-in-out infinite; }
+  .m-r3 { animation: mR3 18s ease-in-out infinite; } .m-r4 { animation: mR4 18s ease-in-out infinite; }
+  .m-p1 { animation: mP1 18s ease-in-out infinite; } .m-p2 { animation: mP2 18s ease-in-out infinite; } .m-p3 { animation: mP3 18s ease-in-out infinite; }
+  .m-ao { animation: mAo 18s ease-in-out infinite; } .m-an { animation: mAn 18s ease-in-out infinite; }
+  .m-c1 { animation: mC1 18s ease-in-out infinite; } .m-c2 { animation: mC2 18s ease-in-out infinite; }
+  .m-c3 { animation: mC3 18s ease-in-out infinite; } .m-c4 { animation: mC4 18s ease-in-out infinite; } .m-c5 { animation: mC5 18s ease-in-out infinite; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mstage *, .mcap * { animation-delay: -15s !important; animation-play-state: paused !important; }
+    .bstage * { animation-delay: -14s !important; animation-play-state: paused !important; }
   }
 
-  .usecase-card p {
-    font-size: 0.92rem;
-    line-height: 1.6;
-    color: var(--text-dim);
-    margin: 0;
-  }
+  /* --- comparison table --- */
+  .cmp-wrap { margin-top: 48px; overflow-x: auto; border: 1px solid var(--border); border-radius: 12px; }
+  table.cmp { width: 100%; min-width: 820px; border-collapse: collapse; font-size: 16px; line-height: 1.4; }
+  .cr { text-align: left; padding: 16px 20px; border-bottom: 1px solid var(--border); font-weight: 500; }
+  .cc { text-align: center; padding: 16px; border-bottom: 1px solid var(--border); }
+  .cc.ca { background: var(--bg-lighter); }
+  .cc.cn { color: var(--border-strong); }
+  .cmp-highlight { font-weight: 700; background: var(--ink); color: #FFFFFF; border-bottom-color: var(--ink); }
 
-  /* --- secondary link (quiet, not a card/button) --- */
-  .quiet-link {
-    text-align: center;
-    padding: 8px 0 72px;
-  }
+  .cmp-notes { margin-top: 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
 
-  .quiet-link a {
-    font-family: 'IBM Plex Mono', monospace;
-    font-weight: 500;
-    font-size: 1.1rem;
-    color: var(--text-dim);
-    text-decoration: none;
-    border-bottom: 1px solid var(--line);
-    padding-bottom: 4px;
-    transition: color 0.15s ease, border-color 0.15s ease;
-  }
+  /* --- outcomes --- */
+  .outcomes-head { padding: 88px 0 0; }
+  .outcomes-head p.sub { margin: 16px 0 0; max-width: 820px; font-size: clamp(22px, 2.4vw, 30px); line-height: 1.25; letter-spacing: -0.02em; font-weight: 600; color: var(--body-text); }
+  .outcomes-grid { padding: 48px 0 80px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px; }
+  .ob + .ob { border-left: 1px solid #C9CED6; padding-left: 40px; }
+  .ob-title { font-size: clamp(28px, 3vw, 40px); font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; min-height: 2.2em; }
+  .ob-body { margin: 12px 0 0; font-size: 17px; line-height: 1.55; color: var(--body-text); }
 
-  .quiet-link a:hover,
-  .quiet-link a:focus-visible {
-    color: var(--accent);
-    border-color: var(--accent);
-  }
+  @media (max-width: 900px) { .ob + .ob { border-left: 0; padding-left: 0; } }
 
-  /* --- closing CTA band --- */
-  .cta-band {
-    background: var(--card);
-    border-radius: 20px;
-    padding: 52px 48px;
-    text-align: center;
-  }
-
-  .cta-band h2 {
-    font-weight: 400;
-    font-size: clamp(1.4rem, 2.2vw, 1.85rem);
-    margin: 0 0 16px;
-  }
-
-  .cta-band p {
-    font-size: 1rem;
-    line-height: 1.65;
-    color: var(--text-dim);
-    max-width: 54ch;
-    margin: 0 auto 30px;
-  }
+  /* --- partners CTA --- */
+  .partners { background: var(--ink); color: #FFFFFF; text-align: center; }
+  .partners .wrap { padding: 112px 24px; }
+  .partners h2 { margin: 0 auto; max-width: 900px; font-size: clamp(36px, 5vw, 64px); line-height: 1.05; letter-spacing: -0.035em; font-weight: 600; text-wrap: balance; }
+  .partners p { margin: 20px auto 0; max-width: 620px; font-size: 18px; line-height: 1.6; color: #C9CED6; }
+  .partners-ctas { margin-top: 36px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
   /* --- footer --- */
   footer.site-foot {
-    border-top: 1px solid var(--line);
-    padding: 40px 0 48px;
-  }
-
-  .foot-nav {
+    padding: 40px 24px;
     display: flex;
-    justify-content: center;
-    gap: 22px;
-    font-size: 0.86rem;
-    color: var(--text-dim);
-    margin-bottom: 18px;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 14px;
+    color: var(--muted);
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
-  .foot-nav a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  .foot-nav a:hover,
-  .foot-nav a:focus-visible { color: var(--text); }
-
-  .foot-team {
-    text-align: center;
-    font-size: 0.86rem;
-    margin-bottom: 22px;
-  }
-
-  .foot-team a {
-    text-decoration: none;
-    color: var(--text-dim);
-    border-bottom: 1px solid var(--line);
-    padding-bottom: 2px;
-  }
-
-  .foot-team a:hover,
-  .foot-team a:focus-visible { color: var(--accent); border-color: var(--accent); }
-
-  .foot-copy {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    font-size: 0.82rem;
-    color: var(--text-faint);
-  }
-
-  .foot-copy img {
-    width: 14px;
-    height: 14px;
-    display: block;
-  }
+  .foot-brand { font-weight: 700; color: var(--ink); }
+  .foot-links { display: flex; gap: 20px; flex-wrap: wrap; }
+  .foot-links a { color: var(--muted); }
 
   @media (max-width: 860px) {
-    .hero-grid { grid-template-columns: 1fr; gap: 36px; }
-    .hero-logo img { max-width: 220px; margin: 0 auto; }
-    .hero { text-align: center; }
-    .hero-sub { margin-left: auto; margin-right: auto; }
-    .arc-row { grid-template-columns: 1fr; gap: 28px; }
-    .arc-step + .arc-step { border-left: none; padding-left: 0; border-top: 1px solid var(--line); padding-top: 24px; }
-    .usecase-row { grid-template-columns: 1fr; }
-    .nav-links { gap: 16px; font-size: 0.86rem; }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    * { transition: none !important; }
+    .hero-ctas, .partners-ctas { justify-content: flex-start; }
+    .partners-ctas { justify-content: center; }
   }
 </style>
 </head>
@@ -451,129 +537,369 @@
   setTimeout(toTop, 0);
   setTimeout(toTop, 150);
 </script>
+
 <nav class="site-nav">
   <div class="wrap">
-    <a class="nav-brand" href="/" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
-      <img src="/assets/heart-mark.png" alt="">
-      arthos
-    </a>
+    <a class="nav-brand" href="/" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Arthos</a>
     <div class="nav-links">
-      <a href="/how-it-works.html">How it works</a>
-      <a href="/about.html">About us</a>
-      <a class="nav-cta" href="/contact.html">Contact</a>
+      <a href="/about.html">Team</a>
+      <a class="nav-cta" href="/contact.html">Talk to the team</a>
     </div>
   </div>
 </nav>
 
 <header class="hero">
-  <div class="wrap hero-grid">
-    <div class="hero-logo">
-      <img src="/assets/arthos3.png" alt="Arthos">
+  <div class="wrap">
+    <div class="hero-copy">
+      <h1>Knowledge drifts. Arthos catches it.</h1>
+      <p class="hero-sub">Arthos works alongside your tools to build a trusted knowledge layer. Your organization and your AI get answers you can rely on, so you can move fast with confidence.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-dark" href="/contact.html">Talk to the team</a>
+        <a class="btn btn-outline" href="#how">See how it works</a>
+      </div>
+      <p class="hero-founders">We've led AI, engineering, and product teams at one of the world's most valuable companies. Now we're rethinking how organizations work with their knowledge.</p>
     </div>
-    <div>
-      <p class="eyebrow">Now onboarding design partners</p>
-      <h1>Knowledge drifts out of sync.<br>Arthos gives you one place to get the current answer.</h1>
-      <p class="hero-sub">Arthos is a trusted knowledge layer. It connects to the tools your teams already use and keeps the knowledge across them up to date. With Arthos, every decision starts from the current answer. You can see what a decision affects before you make it.</p>
-      <a class="btn" href="/contact.html">Let's partner</a>
+
+    <div class="dots hero-map">
+      <div class="mcap stk">
+        <span class="m-c1">A decision is made.</span>
+        <span class="m-c2">The layer updates. The old version is set aside.</span>
+        <span class="m-c3">Arthos shows what else needs to change.</span>
+        <span class="m-c4">Weeks later, your AI answers from Arthos.</span>
+        <span class="m-c5">One decision. The layer updates. Everything that depends on it follows.</span>
+      </div>
+      <div class="mstage" role="img" aria-label="Animation: a January 15 security review decision flows into the Arthos trusted knowledge layer. The old policy is set aside outside the layer. Arthos suggests an update, notifies an owner, and flags a page. In March, the AI sales assistant answers a customer from Arthos.">
+        <svg aria-hidden="true" viewBox="0 0 160 80" style="position: absolute; inset: 0; width: 100%; height: 100%">
+          <path class="ml m-l0" pathLength="1" d="M40 32 H52" fill="none" stroke="#D9530B" stroke-width="0.5" stroke-linecap="round"></path>
+          <path class="ml m-l1" pathLength="1" d="M108 32 H111 Q115 32 115 28 V14 Q115 10 119 10 H119" fill="none" stroke="#1F5FD1" stroke-width="0.45" stroke-linecap="round"></path>
+          <path class="ml m-l2" pathLength="1" d="M108 32 H112 Q115 32 115 29 V29 Q115 26 118 26 H119" fill="none" stroke="#1F5FD1" stroke-width="0.45" stroke-linecap="round"></path>
+          <path class="ml m-l3" pathLength="1" d="M108 32 H111 Q115 32 115 36 V38 Q115 42 119 42 H119" fill="none" stroke="#1F5FD1" stroke-width="0.45" stroke-linecap="round"></path>
+          <path class="ml m-l4" pathLength="1" d="M108 32 H111 Q115 32 115 36 V60 Q115 64 119 64 H119" fill="none" stroke="#1F5FD1" stroke-width="0.45" stroke-linecap="round"></path>
+        </svg>
+
+        <div class="mband" style="left: 32.5%; top: 7.5%; width: 35%; height: 65%"><span class="mbl">Arthos &middot; Trusted knowledge layer</span></div>
+
+        <div class="mc m-dec" style="left: 13.75%; top: 40%; width: 24%; min-height: 6.4em">
+          <span class="tag stk"><span class="m-do">Data policy &middot; Sep 3</span><span class="m-dn" style="color: var(--changed-text)">Security review &middot; Jan 15</span></span>
+          <span class="stk"><span class="m-do" style="color: var(--body-text)">Customer data kept 90 days after cancellation</span><span class="m-dn"><strong>Decision: keep customer data 30 days for accounts cancelled after Mar 1</strong></span></span>
+        </div>
+
+        <div class="mc mf m-old" style="left: 50%; top: 40%; width: 24%; min-height: 6.4em; color: var(--body-text)">
+          <span class="mpill m-sp" style="background: #FFFFFF; color: var(--body-text); border: 1.5px solid var(--border-strong); bottom: auto; top: -0.95em">Superseded Jan 15</span>
+          <span class="tag">Retention policy &middot; Sep 3</span>Customer data kept 90 days after cancellation
+        </div>
+        <div class="mc mf m-new" style="left: 50%; top: 40%; width: 24%; min-height: 6.4em; border-color: var(--changed)">
+          <span class="tag" style="color: var(--changed-text)">Retention policy &middot; Current as of Jan 15</span><strong>Customer data kept 30 days for accounts cancelled after Mar 1</strong>
+        </div>
+
+        <div class="mc mr m-r1" style="left: 86.25%; top: 12.50%"><span class="mpill m-p1">Update suggested: 30 days</span><span class="tag">Sales</span>Security questionnaire Q14</div>
+        <div class="mc mr m-r2" style="left: 86.25%; top: 32.50%"><span class="mpill m-p2">Owner notified: Legal</span><span class="tag">Legal</span>Contract template</div>
+        <div class="mc mr m-r3" style="left: 86.25%; top: 52.50%"><span class="mpill m-p3">Flagged: still says 90 days</span><span class="tag">Website</span>Trust page</div>
+        <div class="mc m-r4" style="left: 86.25%; top: 80.00%; width: 26%; min-height: 7.6em">
+          <span class="tag stk"><span class="m-ao">AI sales assistant</span><span class="m-an" style="color: var(--acted)">AI sales assistant &middot; Mar 12 &middot; From Arthos</span></span>
+          <span class="stk"><span class="m-ao" style="color: var(--muted)">Waiting for a question</span><span class="m-an"><span style="color: var(--body-text)">&ldquo;How long do you keep our data after we cancel?&rdquo;</span><br><strong>&ldquo;We keep it for 30 days after you cancel.&rdquo;</strong></span></span>
+        </div>
+      </div>
     </div>
   </div>
 </header>
 
-<section class="block">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">The problem</p>
+<section class="section section-bordered">
+  <div class="wrap problem-row">
+    <div class="problem-copy" style="flex: 1 1 420px; min-width: 0">
       <h2>Knowledge drifts out of sync faster than anyone can keep up.</h2>
+      <p>Your organization creates documents faster than anyone can keep them current. Your AI reads them all, and it can't tell which ones still hold. Teams find out late, through rework, lost deals, and failed audits.</p>
     </div>
-    <div class="prose">
-      <p>Decisions supersede earlier decisions. Plans, policies, and processes get revised, often somewhere other than where the original lives. Both versions stay in circulation, and neither says which one still holds.</p>
-      <p>Every change also has implications. When one fact changes, the facts and decisions built on it have to change too, but nothing records those relationships. So teams coordinate by hand or work from facts that are no longer true, and that shows up as cost, delays, rework, and customers getting mixed answers.</p>
-    </div>
-  </div>
-</section>
-
-<section class="block">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Why now</p>
-      <h2>The problem isn't new. The stakes are.</h2>
-    </div>
-    <div class="prose">
-      <p>People have always kept an organization's knowledge in line. Someone notices a document is out of date. Someone knows who to ask, or catches that two things don't line up. It was never efficient, but it mostly worked.</p>
-      <p>Now knowledge changes faster than people can track. Teams produce more plans, documents, and decisions than ever. AI tools read those same sources and act on them, without a person's judgment. So more work gets built on information that's no longer current. It travels further before anyone notices: into other teams' work, into what ships, and into what customers are told.</p>
-    </div>
-    <p class="pullquote">By the time it surfaces, fixing it costs far more than catching it would have.</p>
-  </div>
-</section>
-
-<section class="block">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Why existing tools fall short</p>
-      <h2>Finding knowledge is solved. Keeping it correct is not.</h2>
-    </div>
-    <div class="prose">
-      <p>Shared drives, wikis, and search tools are good at storing information and returning what matches a search. But they treat every document as if it stands on its own. They can tell you when a document was last edited. They can't tell you whether what's in it still holds, how it relates to everything else, or what's affected when it changes.</p>
-      <p>So even when you find an answer, you can't be sure it's still right.</p>
-    </div>
-    <p class="pullquote">The gap isn't finding knowledge. It's trusting it.</p>
-  </div>
-</section>
-
-<section class="block">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">What Arthos is</p>
-      <h2>A trusted knowledge layer your whole organization can rely on.</h2>
-    </div>
-    <div class="prose">
-      <p>Arthos connects to the drives, wikis, and ticketing systems your teams already use. It extracts the policies, requirements, and decisions inside them. It keeps track of where each one came from, how it has changed, and what depends on it.</p>
-      <p>That changes how decisions get made.</p>
-    </div>
-    <div class="callout">
-      <p>Say your product team wants to shorten a warranty from two years to one. Before the change goes out, Arthos shows everything built on the current policy. That includes the support team's help articles, the sales contract template, the training guide, and the answers your chatbot gives. You can see which teams will need to act and what they'll need to change. Once you approve the change, Arthos takes care of the rest.</p>
-    </div>
-    <div class="prose">
-      <p>Arthos also flags when two sources disagree, while it's still easy to fix. Your team sees the evidence behind each version and decides which one holds.</p>
-      <p>The result is one place to get the current answer. Everyone works from the same facts, and so do your AI tools. Decisions start from the latest policy. The teams they affect know in advance. And less work gets redone after the fact.</p>
-      <p>Nothing gets migrated or replaced. Your sources stay where they are, and the knowledge inside them stays connected and current.</p>
+    <div class="dots problem-timeline">
+      <div class="ichip ichip-flagged"><span class="tag">Jan 15 &middot; Decision changed</span><strong>Cancellations after Mar 1: data deleted after 30 days.</strong></div>
+      <div class="problem-trail">
+        <div class="problem-trail-label">After Mar 1, the old version is still in use:</div>
+        <div class="ichip"><span class="tag">Mar 10 &middot; Sales</span>Sends a security questionnaire that says 90 days.</div>
+        <div class="ichip"><span class="tag">Mar 18 &middot; AI assistant</span>Tells a prospect their data stays 90 days after they cancel.</div>
+        <div class="ichip"><span class="tag">Apr 2 &middot; Legal</span>Signs a contract with the old retention term.</div>
+        <div class="ichip"><span class="tag">Apr 20 &middot; Website</span>A customer audit finds the trust page still says 90 days.</div>
+      </div>
+      <div class="problem-punch">The decision took a day. The fallout took months.</div>
     </div>
   </div>
 </section>
 
-<div class="quiet-link">
-  <a href="/how-it-works.html">See how it works &rarr;</a>
-</div>
-
-<section class="block">
+<section id="how" class="section" style="background: var(--bg-light)">
   <div class="wrap">
-    <div class="cta-band">
-      <h2>Let's build this together</h2>
-      <p>We're early, and this works best as a two-way build. Help us learn how your teams want to keep knowledge connected and correct. We'll handle the rest. If you're up for that, let's talk.</p>
-      <a class="btn" href="/contact.html">Let's partner</a>
+    <h2>Align every team on one living layer of knowledge.</h2>
+    <p class="lead">For teams whose work depends on decisions made somewhere else.</p>
+
+    <div class="tabs-row">
+      <div class="tabs-list" role="tablist" aria-label="Arthos capabilities">
+        <button type="button" class="tabbtn on" id="tab-btn-impact" role="tab" aria-selected="true" aria-pressed="true" aria-controls="tab-panel-impact"><span class="tbt">Impact</span><span class="tbd">Propose a change and see the documents that depend on it, before anything ships.</span></button>
+        <button type="button" class="tabbtn" id="tab-btn-tracking" role="tab" aria-selected="false" aria-pressed="false" aria-controls="tab-panel-tracking"><span class="tbt">Tracking</span><span class="tbd">See the sources behind a fact, across the tools your teams use.</span></button>
+        <button type="button" class="tabbtn" id="tab-btn-ai" role="tab" aria-selected="false" aria-pressed="false" aria-controls="tab-panel-ai"><span class="tbt">Trusted knowledge</span><span class="tbd">One place for the current answer, with related facts and the sources behind them.</span></button>
+      </div>
+
+      <div class="tabs-panel">
+
+        <div class="tabpanel-body" id="tab-panel-impact" role="tabpanel" aria-labelledby="tab-btn-impact">
+          <div class="dots stage-card">
+            <div class="bstage" role="img" aria-label="Animation: a proposed logging change shows the four documents it would affect and the person to contact on each owning team.">
+              <svg aria-hidden="true" viewBox="0 0 160 80" style="position: absolute; inset: 0; width: 100%; height: 100%">
+                <path class="bd b-d1" pathLength="1" d="M80 9 V22 Q80 26 76 26 H24 Q20 26 20 30 V42" fill="none" stroke="#1F5FD1" stroke-width="0.35" stroke-linecap="round"></path>
+                <path class="bd b-d2" pathLength="1" d="M80 9 V22 Q80 26 76 26 H64 Q60 26 60 30 V42" fill="none" stroke="#1F5FD1" stroke-width="0.35" stroke-linecap="round"></path>
+                <path class="bd b-d3" pathLength="1" d="M80 9 V22 Q80 26 84 26 H96 Q100 26 100 30 V42" fill="none" stroke="#1F5FD1" stroke-width="0.35" stroke-linecap="round"></path>
+                <path class="bd b-d4" pathLength="1" d="M80 9 V22 Q80 26 84 26 H136 Q140 26 140 30 V42" fill="none" stroke="#1F5FD1" stroke-width="0.35" stroke-linecap="round"></path>
+                <path class="bd b-dt" pathLength="1" d="M20 42 V70" fill="none" stroke="#111418" stroke-width="0.3"></path>
+                <path class="bd b-dt" pathLength="1" d="M60 42 V70" fill="none" stroke="#111418" stroke-width="0.3"></path>
+                <path class="bd b-dt" pathLength="1" d="M100 42 V70" fill="none" stroke="#111418" stroke-width="0.3"></path>
+                <path class="bd b-dt" pathLength="1" d="M140 42 V70" fill="none" stroke="#111418" stroke-width="0.3"></path>
+              </svg>
+
+              <div class="chip b-prop" style="left: 50%; top: 11.25%; border-color: var(--changed); border-style: dashed">
+                <span class="tag" style="color: var(--changed-text)">Logging policy &middot; Proposed</span>
+                <span style="font-weight: 600">Usage logs: 90 days &rarr; 30 days</span>
+              </div>
+
+              <div class="chip b-e1" style="left: 12.5%; top: 52.5%; border-color: var(--border-strong)"><span class="pill b-p1">Would be affected</span><span class="tag">Trust page</span>&ldquo;Logs kept for 90 days&rdquo;</div>
+              <div class="chip b-e2" style="left: 37.5%; top: 52.5%; border-color: var(--border-strong)"><span class="pill b-p2">Would be affected</span><span class="tag">Security questionnaire</span>&ldquo;Logs: 90-day retention&rdquo;</div>
+              <div class="chip b-e3" style="left: 62.5%; top: 52.5%; border-color: var(--border-strong)"><span class="pill b-p3">Would be affected</span><span class="tag">Support FAQ</span>&ldquo;Request logs up to 90 days back&rdquo;</div>
+              <div class="chip b-e4" style="left: 87.5%; top: 52.5%; border-color: var(--border-strong)"><span class="pill b-p4">Would be affected</span><span class="tag">Reporting guide</span>&ldquo;Compare usage across 90 days&rdquo;</div>
+
+              <div class="chip b-t1" style="left: 12.5%; top: 87.5%; border-color: #D9DDE3"><span class="tag">Marketing &middot; Contact</span><span style="font-weight: 600">Priya Shah</span></div>
+              <div class="chip b-t2" style="left: 37.5%; top: 87.5%; border-color: #D9DDE3"><span class="tag">Sales &middot; Contact</span><span style="font-weight: 600">Marcus Lee</span></div>
+              <div class="chip b-t3" style="left: 62.5%; top: 87.5%; border-color: #D9DDE3"><span class="tag">Support &middot; Contact</span><span style="font-weight: 600">Dana Ortiz</span></div>
+              <div class="chip b-t4" style="left: 87.5%; top: 87.5%; border-color: #D9DDE3"><span class="tag">Operations &middot; Contact</span><span style="font-weight: 600">Tom Becker</span></div>
+            </div>
+            <div class="bcap stage-cap">See the impact before the change ships.</div>
+          </div>
+          <div class="who">
+            <div class="whoc"><span class="tag">Your team</span>Updates affected documents before the change ships.</div>
+            <div class="whoc"><span class="tag">Your customers</span>See the same retention terms everywhere.</div>
+          </div>
+        </div>
+
+        <div class="tabpanel-body" id="tab-panel-tracking" role="tabpanel" aria-labelledby="tab-btn-tracking" hidden>
+          <div class="dots stage-card">
+            <div class="trstage" role="img" aria-label="Animation: six sources in different tools connect to one fact.">
+              <svg aria-hidden="true" viewBox="0 0 160 70" style="position: absolute; inset: 0; width: 100%; height: 100%">
+                <path class="tl tr-l1" pathLength="1" d="M22 13 H46 Q50 13 50 17 V31 Q50 35 54 35 H80" fill="none" stroke="#111418" stroke-width="0.3" stroke-linecap="round"></path>
+                <path class="tl tr-l2" pathLength="1" d="M22 35 H80" fill="none" stroke="#111418" stroke-width="0.3" stroke-linecap="round"></path>
+                <path class="tl tr-l3" pathLength="1" d="M22 57 H46 Q50 57 50 53 V39 Q50 35 54 35 H80" fill="none" stroke="#111418" stroke-width="0.3" stroke-linecap="round"></path>
+                <path class="tl tr-l4" pathLength="1" d="M138 13 H114 Q110 13 110 17 V31 Q110 35 106 35 H80" fill="none" stroke="#111418" stroke-width="0.3" stroke-linecap="round"></path>
+                <path class="tl tr-l5" pathLength="1" d="M138 35 H80" fill="none" stroke="#111418" stroke-width="0.3" stroke-linecap="round"></path>
+                <path class="tl tr-l6" pathLength="1" d="M138 57 H114 Q110 57 110 53 V39 Q110 35 106 35 H80" fill="none" stroke="#111418" stroke-width="0.3" stroke-linecap="round"></path>
+              </svg>
+
+              <div class="chip tr-s1" style="left: 13.75%; top: 18.6%; border-color: var(--border-strong)"><span class="tag">Meeting notes</span>Security review, Jan 15</div>
+              <div class="chip tr-s2" style="left: 13.75%; top: 50%; border-color: var(--border-strong)"><span class="tag">Spreadsheet</span>Data inventory</div>
+              <div class="chip tr-s3" style="left: 13.75%; top: 81.4%; border-color: var(--border-strong)"><span class="tag">Contract</span>Enterprise template</div>
+              <div class="chip tr-s4" style="left: 86.25%; top: 18.6%; border-color: var(--border-strong)"><span class="tag">Wiki</span>Security handbook</div>
+              <div class="chip tr-s5" style="left: 86.25%; top: 50%; border-color: var(--border-strong)"><span class="tag">Ticket</span>Deletion schedule update</div>
+              <div class="chip tr-s6" style="left: 86.25%; top: 81.4%; border-color: var(--border-strong)"><span class="tag">Chat thread</span>Legal channel</div>
+
+              <div class="chip tr-f tr-fact-card">
+                <span class="tag">Fact</span><strong>Customer data kept 30 days for accounts cancelled after Mar 1</strong>
+                <span class="tr-n" style="position: absolute; top: -0.95em; right: .8em; background: var(--ink); color: #FFFFFF; font-size: .66em; font-weight: 600; padding: .3em .7em; border-radius: 999px">6 sources</span>
+              </div>
+            </div>
+            <div class="tr-cap stage-cap">One fact. Its sources, connected.</div>
+          </div>
+          <div class="who">
+            <div class="whoc"><span class="tag">Your team</span>Knows where facts come from.</div>
+            <div class="whoc"><span class="tag">Your customers</span>Get the same answer, whichever channel they use.</div>
+          </div>
+        </div>
+
+        <div class="tabpanel-body" id="tab-panel-ai" role="tabpanel" aria-labelledby="tab-btn-ai" hidden>
+          <div class="dots stage-card" style="padding: 48px 28px; display: flex; flex-direction: column; align-items: center">
+            <div style="width: 100%; max-width: 680px; display: flex; flex-direction: column; gap: 14px">
+              <div class="ichip c-in1" style="align-self: flex-end; max-width: 440px; background: var(--bg-lighter); font-size: 17px; padding: 14px 16px"><span class="tag">Customer asks your AI assistant</span>How long do you keep our data after we cancel?</div>
+              <div class="ichip k-old" style="border-style: dashed; border-width: 2px; color: var(--muted); font-size: 16px; padding: 12px 16px"><span class="tag">Older version &middot; Skipped</span><span style="text-decoration: line-through">We keep your data 90 days after you cancel.</span></div>
+              <div class="ichip a-ans" style="border-color: var(--ink); border-width: 2px; display: flex; flex-direction: column; gap: 14px; font-size: 17px; padding: 16px 18px">
+                <span><span class="tag">Current answer</span><strong>30 days, if you cancel after Mar 1.</strong></span>
+                <div class="k-rel" style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid var(--border); padding-top: 12px">
+                  <span class="tag" style="margin: 0">Related facts</span>
+                  <span style="font-size: 15px">If you cancel before Mar 1, your data is kept for 90 days.</span>
+                  <span style="font-size: 15px">Based on the date your contract ends, not when you give notice.</span>
+                  <span style="font-size: 15px">Backups follow the same schedule.</span>
+                </div>
+                <div class="a-src mono" style="font-size: 12px; color: var(--body-text); background: var(--bg-lighter); border: 1px solid #D9DDE3; border-radius: 4px; padding: 6px 9px; align-self: flex-start">Current as of Jan 15</div>
+              </div>
+            </div>
+          </div>
+          <div class="who">
+            <div class="whoc"><span class="tag">Your team</span>Answers once, with confidence.</div>
+            <div class="whoc"><span class="tag">Your customers</span>Get the right retention answer the first time.</div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 </section>
 
-<footer class="site-foot" id="about-preview">
+<section class="section">
   <div class="wrap">
-    <div class="foot-nav">
-      <a href="/how-it-works.html">How it works</a>
-      <a href="/about.html">About us</a>
-      <a href="/contact.html">Contact</a>
+    <h2>Finding knowledge is solved. <span style="color: var(--muted)">Keeping it correct isn't.</span></h2>
+    <p class="lead">Your AI answers the questions you ask. Arthos doesn't wait to be asked. It builds a layer of knowledge that updates as things change and recommends what to do next, so your whole organization works from the same current answer.</p>
+
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <thead>
+          <tr>
+            <th scope="col" class="cr" style="width: 30%"><span class="sr">What it does</span></th>
+            <th scope="col" class="cc" style="font-weight: 600">Search tools</th>
+            <th scope="col" class="cc" style="font-weight: 600">AI assistants</th>
+            <th scope="col" class="cc" style="font-weight: 600">Knowledge graphs</th>
+            <th scope="col" class="cc cmp-highlight">Arthos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" class="cr" style="font-weight: 600">Built to</th>
+            <td class="cc" style="color: var(--body-text)">Find documents</td>
+            <td class="cc" style="color: var(--body-text)">Answer and write</td>
+            <td class="cc" style="color: var(--body-text)">Map connections</td>
+            <td class="cc ca" style="font-weight: 700">Keep knowledge current</td>
+          </tr>
+          <tr>
+            <th scope="row" class="cr">Works with the tools you already use</th>
+            <td class="cc"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9" fill="none" stroke="#111418" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="sr">Yes</span></td>
+            <td class="cc"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9" fill="none" stroke="#111418" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="sr">Yes</span></td>
+            <td class="cc cn">&mdash;<span class="sr">Not its focus</span></td>
+            <td class="cc ca"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9" fill="none" stroke="#111418" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="sr">Yes</span></td>
+          </tr>
+          <tr>
+            <th scope="row" class="cr">Finds documents fast</th>
+            <td class="cc"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9" fill="none" stroke="#111418" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="sr">Yes</span></td>
+            <td class="cc"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9" fill="none" stroke="#111418" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="sr">Yes</span></td>
+            <td class="cc cn">&mdash;<span class="sr">Not its focus</span></td>
+            <td class="cc ca cn">&mdash;<span class="sr">Not its focus</span></td>
+          </tr>
+          <tr>
+            <th scope="row" class="cr">Drafts and summarizes content</th>
+            <td class="cc cn">&mdash;<span class="sr">Not its focus</span></td>
+            <td class="cc"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9" fill="none" stroke="#111418" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="sr">Yes</span></td>
+            <td class="cc cn">&mdash;<span class="sr">Not its focus</span></td>
+            <td class="cc ca cn">&mdash;<span class="sr">Not its focus</span></td>
+          </tr>
+          <tr>
+            <th scope="row" class="cr">Shows how information connects</th>
+            <td class="cc cn">&mdash;<span class="sr">Not its focus</span></td>
+            <td class="cc cn">&mdash;<span class="sr">Not its focus</span></td>
+            <td class="cc"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9" fill="none" stroke="#111418" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="sr">Yes</span></td>
+            <td class="cc ca"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9" fill="none" stroke="#111418" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="sr">Yes</span></td>
+          </tr>
+          <tr>
+            <th scope="row" class="cr">Built around what you decide matters</th>
+            <td class="cc cn">&mdash;<span class="sr">Not its focus</span></td>
+            <td class="cc cn">&mdash;<span class="sr">Not its focus</span></td>
+            <td class="cc"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9" fill="none" stroke="#111418" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="sr">Yes</span></td>
+            <td class="cc ca"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9" fill="none" stroke="#111418" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="sr">Yes</span></td>
+          </tr>
+          <tr>
+            <th scope="row" class="cr">One place to find the current answer</th>
+            <td class="cc cn">&mdash;<span class="sr">Not its focus</span></td>
+            <td class="cc cn">&mdash;<span class="sr">Not its focus</span></td>
+            <td class="cc cn">&mdash;<span class="sr">Not its focus</span></td>
+            <td class="cc ca"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9" fill="none" stroke="#111418" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="sr">Yes</span></td>
+          </tr>
+          <tr>
+            <th scope="row" class="cr">Surfaces changes without being asked</th>
+            <td class="cc cn">&mdash;<span class="sr">Not its focus</span></td>
+            <td class="cc cn">&mdash;<span class="sr">Not its focus</span></td>
+            <td class="cc cn">&mdash;<span class="sr">Not its focus</span></td>
+            <td class="cc ca"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9" fill="none" stroke="#111418" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="sr">Yes</span></td>
+          </tr>
+          <tr>
+            <th scope="row" class="cr" style="border-bottom: 0">Lets AI scale on knowledge you can trust</th>
+            <td class="cc cn" style="border-bottom: 0">&mdash;<span class="sr">Not its focus</span></td>
+            <td class="cc cn" style="border-bottom: 0">&mdash;<span class="sr">Not its focus</span></td>
+            <td class="cc cn" style="border-bottom: 0">&mdash;<span class="sr">Not its focus</span></td>
+            <td class="cc ca" style="border-bottom: 0"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9" fill="none" stroke="#111418" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="sr">Yes</span></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <p class="foot-team">Curious who's building this? <a href="/about.html">Meet the team &rarr;</a></p>
-    <div class="foot-copy">
-      <img src="/assets/heart-mark.png" alt="">
-      © <span id="copyright-year">2026</span> Arthos AI, Inc.
-      <img src="/assets/heart-mark.png" alt="">
+    <div class="cmp-notes">
+      <div class="whoc"><strong>Keep the tools you have.</strong> Arthos works alongside your documents, wikis, tickets, and chats.</div>
+      <div class="whoc"><strong>One place for the current answer.</strong> Facts from across your tools, centralized for your teams and your AI.</div>
+      <div class="whoc"><strong>Focused on what matters.</strong> You decide what's important. Arthos keeps it front and center.</div>
+      <div class="whoc"><strong>Your team makes the call.</strong> Arthos shows the evidence behind each version.</div>
     </div>
   </div>
+</section>
+
+<section style="background: var(--bg-lighter)">
+  <div class="wrap outcomes-head">
+    <h2>Arthos is your trusted knowledge layer.</h2>
+    <p class="sub">Move faster, even as complexity grows.</p>
+  </div>
+  <div class="wrap outcomes-grid">
+    <div class="ob">
+      <div class="ob-title">Scale without hitting a ceiling.</div>
+      <p class="ob-body">Grow your teams and your AI without outgrowing your knowledge.</p>
+    </div>
+    <div class="ob">
+      <div class="ob-title">Fix it while it's cheap.</div>
+      <p class="ob-body">Catch outdated information before work is built on it.</p>
+    </div>
+    <div class="ob">
+      <div class="ob-title">Plan around change.</div>
+      <p class="ob-body">See what a change affects before it ships.</p>
+    </div>
+  </div>
+</section>
+
+<section id="partners" class="partners">
+  <div class="wrap">
+    <h2>Be part of building the trusted knowledge layer.</h2>
+    <p>We're working with a few select design partners. You'll get early access to new features, a say in the roadmap, and special partner pricing.</p>
+    <div class="partners-ctas">
+      <a class="btn btn-light" href="/contact.html">Talk to the team</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot" id="company">
+  <span class="foot-brand">Arthos</span>
+  <span class="foot-links">
+    <a href="/about.html">Team</a>
+    <a href="/contact.html">Talk to the team</a>
+    <a href="/privacy/">Privacy</a>
+  </span>
 </footer>
 
 <script>
-  var yearEl = document.getElementById('copyright-year');
-  if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
+  (function () {
+    var tabs = [
+      { btn: document.getElementById('tab-btn-impact'), panel: document.getElementById('tab-panel-impact'), replay: false },
+      { btn: document.getElementById('tab-btn-tracking'), panel: document.getElementById('tab-panel-tracking'), replay: true },
+      { btn: document.getElementById('tab-btn-ai'), panel: document.getElementById('tab-panel-ai'), replay: true }
+    ];
+
+    function restartAnimations(panel) {
+      var animated = panel.querySelectorAll('[class*="tr-"], [class*="c-in"], .a-q, .k-old, .a-ans, .k-rel, .a-src');
+      animated.forEach(function (el) {
+        el.style.animation = 'none';
+        void el.offsetWidth;
+        el.style.animation = '';
+      });
+    }
+
+    function select(target) {
+      tabs.forEach(function (t) {
+        var on = t === target;
+        t.btn.classList.toggle('on', on);
+        t.btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+        t.btn.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.panel.hidden = !on;
+        if (on && t.replay) { restartAnimations(t.panel); }
+      });
+    }
+
+    tabs.forEach(function (t) {
+      t.btn.addEventListener('click', function () { select(t); });
+    });
+  })();
 </script>
+
 </body>
 </html>
