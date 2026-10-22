@@ -114,6 +114,27 @@
   textarea.fi { resize: vertical; min-height: 140px; }
   .req { color: var(--req); }
 
+  select.fi {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    padding-right: 44px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%235B6470' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+  }
+  select.fi:invalid { color: var(--muted); }
+  select.fi option { color: var(--ink); font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 16px; }
+  @supports (appearance: base-select) {
+    select.fi, select.fi::picker(select) { appearance: base-select; }
+    select.fi::picker-icon { display: none; }
+    select.fi::picker(select) { font-family: 'Instrument Sans', system-ui, sans-serif; background: #FFFFFF; border: 1px solid #C9CED6; border-radius: 8px; box-shadow: 0 8px 24px rgba(17,20,24,.12); padding: 6px; margin-top: 4px; }
+    select.fi option { padding: 10px 12px; border-radius: 6px; cursor: pointer; }
+    select.fi option:hover, select.fi option:focus-visible { background: #F1F3F6; outline: none; }
+    select.fi option:checked { font-weight: 600; }
+    select.fi option::checkmark { display: none; }
+  }
+
   .form-submit {
     align-self: flex-start;
     font: inherit;
@@ -172,6 +193,7 @@
 
   footer.site-foot { border-top: 1px solid var(--border); }
   footer.site-foot .wrap { padding: 40px 24px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 14px; color: var(--muted); }
+  .foot-left { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
   .foot-brand { font-weight: 700; color: var(--ink); }
   .foot-links { display: flex; gap: 20px; flex-wrap: wrap; }
   .foot-links a { color: var(--muted); }
@@ -205,11 +227,11 @@
 
 <div class="contact-row">
   <div id="contact-copy" class="contact-copy">
-    <h1>Let's partner.</h1>
-    <p>Tell us where knowledge drifts in your organization. We'll show you what we're building, and how you can help shape it.</p>
+    <h1>Get in touch.</h1>
+    <p>Have a question, or want to see what we're building? Send us a note and we'll get back to you.</p>
     <div class="dots partner-note">
       <div class="title">Interested in becoming a design partner?</div>
-      <p>Mention it in your message. We're working with a few select teams.</p>
+      <p>Choose &ldquo;Design partnership&rdquo; in the form. We're working with a few select teams.</p>
     </div>
   </div>
 
@@ -224,6 +246,17 @@
     <div class="honeypot-field">
       <label for="website">Website (leave blank)</label>
       <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+    </div>
+
+    <div>
+      <label class="fl" for="topic">What's this about? <span class="req">*</span></label>
+      <select class="fi" id="topic" name="topic" required>
+        <option value="" disabled selected hidden>Choose one</option>
+        <option value="Design partnership">Design partnership</option>
+        <option value="General question">General question</option>
+        <option value="Press">Press</option>
+        <option value="Other">Other</option>
+      </select>
     </div>
 
     <div>
@@ -252,11 +285,15 @@
 
 <footer class="site-foot">
   <div class="wrap">
-    <span class="foot-brand">Arthos</span>
+    <span class="foot-left">
+      <span class="foot-brand">Arthos</span>
+      <span class="foot-copy">&copy; Arthos AI, Inc. <span id="copy-year"></span></span>
+    </span>
     <span class="foot-links">
       <a href="/about.html">Team</a>
       <a href="/contact.html" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Talk to the team</a>
       <a href="/privacy/">Privacy</a>
+      <a href="https://www.linkedin.com/company/arthos-ai/" target="_blank" rel="noopener">LinkedIn</a>
     </span>
   </div>
 </footer>
@@ -278,14 +315,15 @@
       errorMsg.hidden = true;
 
       var honeypot = document.getElementById('website').value.trim();
+      var topic = document.getElementById('topic').value.trim();
       var name = document.getElementById('name').value.trim();
       var email = document.getElementById('email').value.trim();
       var company = document.getElementById('company').value.trim();
       var message = document.getElementById('message').value.trim();
 
       if (honeypot) { return; }
-      if (!name || !email || !company || !message || !isValidEmail(email)) {
-        errorMsg.textContent = 'Please fill in your name, company, a valid email, and a message.';
+      if (!topic || !name || !email || !company || !message || !isValidEmail(email)) {
+        errorMsg.textContent = 'Please fill in what this is about, your name, company, a valid email, and a message.';
         errorMsg.hidden = false;
         return;
       }
@@ -318,5 +356,6 @@
     });
   })();
 </script>
+<script>document.getElementById('copy-year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

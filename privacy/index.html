@@ -31,7 +31,9 @@
   .updated { font-size: 14px; color: var(--muted); margin: 0 0 40px; }
   .scope-note { background: #F6F7F9; border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin: 0 0 40px; font-size: 15px; line-height: 1.6; color: var(--muted); }
   footer.site-foot { border-top: 1px solid var(--border); padding: 40px 24px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 14px; color: var(--muted); max-width: 1200px; margin: 0 auto; }
+  .foot-left { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
   .foot-brand { font-weight: 700; color: var(--ink); text-decoration: none; }
+  .foot-copy { color: var(--muted); }
   .foot-links { display: flex; gap: 20px; flex-wrap: wrap; }
   .foot-links a { color: var(--muted); text-decoration: none; }
 </style>
@@ -52,22 +54,23 @@
   <h1>Privacy policy</h1>
   <p class="updated">Last updated October 2026</p>
 
-  <div class="scope-note">This policy covers this website, arthos.ai, only. It does not cover the Arthos product itself, which pilot customers use under a separate agreement with its own data-handling terms.</div>
+  <div class="scope-note">This policy covers this website, arthos.ai, only. It does not cover the Arthos product itself, which design partners use under a separate agreement with its own data-handling terms.</div>
 
   <h2>What we collect</h2>
-  <p>The only personal information this website collects is what you choose to submit through our <a href="/contact.html">contact form</a>: your name, email address, company, and the message you write. We don't use cookies, analytics, or any third-party tracking on this site.</p>
+  <p>The only personal information this website collects is what you choose to submit through our <a href="/contact.html">contact form</a>: what your message is about, your name, email address, company, and the message you write. We don't use cookies, analytics, or any third-party tracking on this site. Our hosting provider may log basic technical information, such as IP addresses, for security and reliability.</p>
+  <p>This site loads fonts from Google Fonts, which may receive your IP address.</p>
 
   <h2>How we use it</h2>
-  <p>We use what you submit solely to read your message and respond to you &mdash; for example, to follow up on a pilot inquiry. We don't use it for advertising, and we don't sell it.</p>
+  <p>We use what you submit solely to read your message and respond to you &mdash; for example, to follow up on a design partner inquiry. We don't use it for advertising, and we don't sell it.</p>
 
   <h2>Who we share it with</h2>
-  <p>Form submissions are processed by <a href="https://formspree.io" target="_blank" rel="noopener">Formspree</a>, a third-party form service, which delivers your message to us by email. Formspree's handling of that data is governed by its own <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener">privacy policy</a>. We don't share your information with anyone else.</p>
+  <p>We use <a href="https://formspree.io" target="_blank" rel="noopener">Formspree</a>, a third-party form service, to store form submissions and deliver them to us by email. Formspree handles this information under its own <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener">privacy policy</a>. We don't share your information with anyone else.</p>
 
   <h2>How long we keep it</h2>
   <p>We keep contact form submissions for as long as we need them to respond to you and keep a record of our conversation. If you'd like us to delete your information, contact us and we will.</p>
 
   <h2>Your choices</h2>
-  <p>You can ask us what information we have about you, ask us to correct it, or ask us to delete it, at any time &mdash; just reach out through the <a href="/contact.html">contact page</a>.</p>
+  <p>You can ask us what information we have about you, ask us to correct it, or ask us to delete it, at any time &mdash; just reach out through the <a href="/contact.html">contact page</a> or at <a href="mailto:hello@arthos.ai">hello@arthos.ai</a>.</p>
 
   <h2>Children's privacy</h2>
   <p>This site is intended for business use and isn't directed at children. We don't knowingly collect information from children.</p>
@@ -76,17 +79,23 @@
   <p>If this policy changes, we'll update the date at the top of this page.</p>
 
   <h2>Contact us</h2>
-  <p>Questions about this policy or your information? Reach us through the <a href="/contact.html">contact page</a>.</p>
+  <p>Questions about this policy or your information? Reach us through the <a href="/contact.html">contact page</a> or at <a href="mailto:hello@arthos.ai">hello@arthos.ai</a>.</p>
+  <p>Arthos AI, Inc. &middot; Woodinville, WA</p>
 </main>
 
 <footer class="site-foot">
-  <a class="foot-brand" href="/">Arthos</a>
+  <span class="foot-left">
+    <a class="foot-brand" href="/">Arthos</a>
+    <span class="foot-copy">&copy; Arthos AI, Inc. <span id="copy-year"></span></span>
+  </span>
   <span class="foot-links">
     <a href="/about.html">Team</a>
     <a href="/contact.html">Talk to the team</a>
     <a href="/privacy/">Privacy</a>
+    <a href="https://www.linkedin.com/company/arthos-ai/" target="_blank" rel="noopener">LinkedIn</a>
   </span>
 </footer>
 
+<script>document.getElementById('copy-year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

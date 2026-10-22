@@ -607,6 +607,7 @@
     margin: 0 auto;
   }
 
+  .foot-left { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
   .foot-brand { font-weight: 700; color: var(--ink); }
   .foot-links { display: flex; gap: 20px; flex-wrap: wrap; }
   .foot-links a { color: var(--muted); }
@@ -988,11 +989,15 @@
 </section>
 
 <footer class="site-foot" id="company">
-  <span class="foot-brand">Arthos</span>
+  <span class="foot-left">
+    <span class="foot-brand">Arthos</span>
+    <span class="foot-copy">&copy; Arthos AI, Inc. <span id="copy-year"></span></span>
+  </span>
   <span class="foot-links">
     <a href="/about.html">Team</a>
     <a href="/contact.html">Talk to the team</a>
     <a href="/privacy/">Privacy</a>
+    <a href="https://www.linkedin.com/company/arthos-ai/" target="_blank" rel="noopener">LinkedIn</a>
   </span>
 </footer>
 
@@ -1029,6 +1034,7 @@
     });
   })();
 </script>
+<script>document.getElementById('copy-year').textContent = new Date().getFullYear();</script>
 
 </body>
 </html>
