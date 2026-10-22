@@ -489,6 +489,7 @@
 
   /* --- outcomes --- */
   .outcomes-head { padding: 88px 0 0; }
+  .outcomes-head h2 { margin: 0; max-width: 820px; font-size: clamp(36px, 5vw, 64px); line-height: 1.05; letter-spacing: -0.035em; font-weight: 600; text-wrap: balance; }
   .outcomes-head p.sub { margin: 16px 0 0; max-width: 820px; font-size: clamp(22px, 2.4vw, 30px); line-height: 1.25; letter-spacing: -0.02em; font-weight: 600; color: var(--body-text); }
   .outcomes-grid { padding: 48px 0 80px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px; }
   .ob + .ob { border-left: 1px solid #C9CED6; padding-left: 40px; }
@@ -525,9 +526,10 @@
   @keyframes mh5 { 0%,48%{opacity:0;transform:translateY(8px)} 52%,88%{opacity:1;transform:translateY(0)} 92%,100%{opacity:0;transform:translateY(0)} }
   @keyframes mh6 { 0%,60%{opacity:0;transform:translateY(8px)} 64%,88%{opacity:1;transform:translateY(0)} 92%,100%{opacity:0;transform:translateY(0)} }
   @keyframes mh7 { 0%,72%{opacity:0;transform:translateY(8px)} 76%,88%{opacity:1;transform:translateY(0)} 92%,100%{opacity:0;transform:translateY(0)} }
+  @keyframes mhBand { 0%,8%{opacity:0;transform:translateY(8px)} 12%,88%{opacity:1;transform:translateY(0)} 92%,100%{opacity:0;transform:translateY(0)} }
   .mh1{animation:mh1 18s ease-in-out infinite}.mh2{animation:mh2 18s ease-in-out infinite}.mh3{animation:mh3 18s ease-in-out infinite}
   .mh4{animation:mh4 18s ease-in-out infinite}.mh5{animation:mh5 18s ease-in-out infinite}.mh6{animation:mh6 18s ease-in-out infinite}
-  .mh7{animation:mh7 18s ease-in-out infinite}
+  .mh7{animation:mh7 18s ease-in-out infinite}.mhBand{animation:mhBand 18s ease-in-out infinite;opacity:0;transform:translateY(8px)}
 
   /* Old-version-vs-current-version callout, reused on the Hero and Impact mobile narratives. */
   .ichip-superseded { border-style: dashed; color: var(--muted); }
@@ -537,6 +539,28 @@
   .ichip-proposed { border-color: var(--changed); border-style: dashed; border-width: 2px; }
   .ichip-proposed .tag { color: var(--changed-text); }
   .mobile-narrative .narrative-connector { font-size: 13px; color: var(--muted); font-weight: 600; text-align: center; margin: -2px 0; }
+
+  /* Mobile equivalent of the hero's .mband -- a dark "Arthos layer" box
+     drawn behind whichever cards currently live inside it, same idea as
+     the desktop diagram's band sitting behind the retention-policy chips. */
+  .mobile-layer-band {
+    background: var(--ink);
+    border-radius: 14px;
+    padding: 14px 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .mobile-layer-band .band-label {
+    text-align: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin: 0 0 2px;
+  }
 
   /* Impact: loops with the 16s cycle, same build-then-reset pattern. */
   @keyframes mi1 { 0%,0%{opacity:0;transform:translateY(8px)} 4%,88%{opacity:1;transform:translateY(0)} 92%,100%{opacity:0;transform:translateY(0)} }
@@ -674,8 +698,11 @@
 
       <div class="mobile-narrative" role="img" aria-label="A January 15 security review decision flows into the Arthos trusted knowledge layer. The old policy is set aside outside the layer. Arthos suggests an update, notifies an owner, and flags a page. In March, the AI sales assistant answers a customer from Arthos.">
         <div class="ichip mh1"><span class="tag">Jan 15 &middot; Decision</span>Security review: keep customer data 30 days for accounts cancelled after Mar&nbsp;1.</div>
-        <div class="ichip mh2 ichip-superseded"><span class="tag">Retention policy &middot; Superseded Jan 15</span><span style="text-decoration: line-through">Customer data kept 90 days after cancellation</span></div>
-        <div class="ichip mh3 ichip-current"><span class="tag">Retention policy &middot; Current as of Jan 15</span><strong>Customer data kept 30 days for accounts cancelled after Mar&nbsp;1</strong></div>
+        <div class="mobile-layer-band mhBand">
+          <div class="band-label">Arthos &middot; Trusted knowledge layer</div>
+          <div class="ichip mh2 ichip-superseded"><span class="tag">Retention policy &middot; Superseded Jan 15</span><span style="text-decoration: line-through">Customer data kept 90 days after cancellation</span></div>
+          <div class="ichip mh3 ichip-current"><span class="tag">Retention policy &middot; Current as of Jan 15</span><strong>Customer data kept 30 days for accounts cancelled after Mar&nbsp;1</strong></div>
+        </div>
         <div class="ichip mh4"><span class="tag">Sales</span>Update suggested on Security questionnaire Q14: still says 90 days.</div>
         <div class="ichip mh5"><span class="tag">Legal</span>Owner notified on Contract template.</div>
         <div class="ichip mh6"><span class="tag">Website</span>Trust page flagged: still says 90 days.</div>
@@ -797,7 +824,7 @@
               <div class="ichip tr-m4"><span class="tag">Wiki</span>Security handbook</div>
               <div class="ichip tr-m5"><span class="tag">Ticket</span>Deletion schedule update</div>
               <div class="ichip tr-m6"><span class="tag">Chat thread</span>Legal channel</div>
-              <div class="tr-m7 narrative-connector">&darr; All six agree on one current fact</div>
+              <div class="tr-m7 narrative-connector">&darr; All six trace back to one fact in the Arthos layer</div>
               <div class="ichip tr-m8 ichip-current"><span class="tag">Fact &middot; 6 sources</span><strong>Customer data kept 30 days for accounts cancelled after Mar&nbsp;1</strong></div>
             </div>
             <div class="tr-cap stage-cap">One fact. Its sources, connected.</div>
