@@ -342,11 +342,11 @@
   .bd { stroke-dasharray: 1; stroke-dashoffset: 1; }
 
   @keyframes bProp { 0%,4% { opacity: 0; transform: translate(-50%,-50%) scale(.9); } 9% { opacity: 1; transform: translate(-50%,-50%) scale(1.14); } 15%,90% { opacity: 1; transform: translate(-50%,-50%) scale(1.06); } 96%,100% { opacity: 0; transform: translate(-50%,-50%) scale(1); } }
-  @keyframes bD1 { 0%,12% { stroke-dashoffset: 1; opacity: 1; } 18%,90% { stroke-dashoffset: 0; opacity: 1; } 95% { stroke-dashoffset: 0; opacity: 0; } 96%,100% { stroke-dashoffset: 1; opacity: 0; } }
-  @keyframes bD2 { 0%,18% { stroke-dashoffset: 1; opacity: 1; } 24%,90% { stroke-dashoffset: 0; opacity: 1; } 95% { stroke-dashoffset: 0; opacity: 0; } 96%,100% { stroke-dashoffset: 1; opacity: 0; } }
-  @keyframes bD3 { 0%,24% { stroke-dashoffset: 1; opacity: 1; } 30%,90% { stroke-dashoffset: 0; opacity: 1; } 95% { stroke-dashoffset: 0; opacity: 0; } 96%,100% { stroke-dashoffset: 1; opacity: 0; } }
-  @keyframes bD4 { 0%,30% { stroke-dashoffset: 1; opacity: 1; } 36%,90% { stroke-dashoffset: 0; opacity: 1; } 95% { stroke-dashoffset: 0; opacity: 0; } 96%,100% { stroke-dashoffset: 1; opacity: 0; } }
-  @keyframes bDT { 0%,44% { stroke-dashoffset: 1; opacity: 1; } 52%,90% { stroke-dashoffset: 0; opacity: 1; } 95% { stroke-dashoffset: 0; opacity: 0; } 96%,100% { stroke-dashoffset: 1; opacity: 0; } }
+  @keyframes bD1 { 0%,12% { stroke-dashoffset: 1; opacity: 1; } 18%,90% { stroke-dashoffset: 0; opacity: 1; } 96% { stroke-dashoffset: 0; opacity: 0; } 98%,100% { stroke-dashoffset: 1; opacity: 0; } }
+  @keyframes bD2 { 0%,18% { stroke-dashoffset: 1; opacity: 1; } 24%,90% { stroke-dashoffset: 0; opacity: 1; } 96% { stroke-dashoffset: 0; opacity: 0; } 98%,100% { stroke-dashoffset: 1; opacity: 0; } }
+  @keyframes bD3 { 0%,24% { stroke-dashoffset: 1; opacity: 1; } 30%,90% { stroke-dashoffset: 0; opacity: 1; } 96% { stroke-dashoffset: 0; opacity: 0; } 98%,100% { stroke-dashoffset: 1; opacity: 0; } }
+  @keyframes bD4 { 0%,30% { stroke-dashoffset: 1; opacity: 1; } 36%,90% { stroke-dashoffset: 0; opacity: 1; } 96% { stroke-dashoffset: 0; opacity: 0; } 98%,100% { stroke-dashoffset: 1; opacity: 0; } }
+  @keyframes bDT { 0%,44% { stroke-dashoffset: 1; opacity: 1; } 52%,90% { stroke-dashoffset: 0; opacity: 1; } 96% { stroke-dashoffset: 0; opacity: 0; } 98%,100% { stroke-dashoffset: 1; opacity: 0; } }
   @keyframes bE1 { 0%,18% { transform: translate(-50%,-50%) scale(1); border-color: var(--border-strong); } 22% { transform: translate(-50%,-50%) scale(1.12); border-color: var(--acted); } 28%,90% { transform: translate(-50%,-50%) scale(1.05); border-color: var(--acted); } 96%,100% { transform: translate(-50%,-50%) scale(1); border-color: var(--border-strong); } }
   @keyframes bE2 { 0%,24% { transform: translate(-50%,-50%) scale(1); border-color: var(--border-strong); } 28% { transform: translate(-50%,-50%) scale(1.12); border-color: var(--acted); } 34%,90% { transform: translate(-50%,-50%) scale(1.05); border-color: var(--acted); } 96%,100% { transform: translate(-50%,-50%) scale(1); border-color: var(--border-strong); } }
   @keyframes bE3 { 0%,30% { transform: translate(-50%,-50%) scale(1); border-color: var(--border-strong); } 34% { transform: translate(-50%,-50%) scale(1.12); border-color: var(--acted); } 40%,90% { transform: translate(-50%,-50%) scale(1.05); border-color: var(--acted); } 96%,100% { transform: translate(-50%,-50%) scale(1); border-color: var(--border-strong); } }
@@ -413,7 +413,7 @@
     }
   }
 
-  /* --- hero map stage (18s loop) --- */
+  /* --- hero map stage (24s loop) --- */
   .mstage { position: relative; aspect-ratio: 160/80; max-width: 1180px; margin: 0 auto; font-size: clamp(8px, 1.15vw, 15px); }
   .mc { position: absolute; transform: translate(-50%,-50%); background: #FFFFFF; border: 2px solid var(--border-strong); border-radius: 10px; padding: .6em .8em; font-size: 1em; line-height: 1.3; color: var(--ink); box-sizing: border-box; z-index: 2; display: flex; flex-direction: column; justify-content: center; }
   .mc .tag { font-size: .66em; margin-bottom: .35em; display: block; font-family: 'IBM Plex Mono', monospace; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
@@ -424,6 +424,7 @@
   .mpill { position: absolute; bottom: -0.95em; left: 50%; transform: translateX(-50%); white-space: nowrap; background: var(--acted); color: #FFFFFF; font-size: .66em; font-weight: 600; padding: .3em .7em; border-radius: 999px; }
   .ml { stroke-dasharray: 1; stroke-dashoffset: 1; }
   .mcap { text-align: center; margin: 0 0 18px; font-size: clamp(17px,2vw,26px); font-weight: 700; letter-spacing: -0.02em; color: var(--ink); min-height: 1.4em; }
+  .m-c4-br-m { display: none; }
   .stk { display: grid; } .stk > * { grid-area: 1/1; }
   .mc .tag.stk { display: grid; }
 
@@ -453,18 +454,18 @@
   @keyframes mC4 { 0%,60% { opacity: 0; } 63%,76% { opacity: 1; } 78%,100% { opacity: 0; } }
   @keyframes mC5 { 0%,79% { opacity: 0; } 82%,92% { opacity: 1; } 94%,100% { opacity: 0; } }
 
-  .m-dec { animation: mDec 18s ease-in-out infinite; }
-  .m-do { animation: mDo 18s ease-in-out infinite; } .m-dn { animation: mDn 18s ease-in-out infinite; }
-  .m-l0 { animation: mL0 18s ease-in-out infinite; }
-  .m-old { animation: mOld 18s ease-in-out infinite; } .m-sp { animation: mSp 18s ease-in-out infinite; } .m-new { animation: mNew 18s ease-in-out infinite; }
-  .m-l1 { animation: mL1 18s ease-in-out infinite; } .m-l2 { animation: mL2 18s ease-in-out infinite; }
-  .m-l3 { animation: mL3 18s ease-in-out infinite; } .m-l4 { animation: mL4 18s ease-in-out infinite; }
-  .m-r1 { animation: mR1 18s ease-in-out infinite; } .m-r2 { animation: mR2 18s ease-in-out infinite; }
-  .m-r3 { animation: mR3 18s ease-in-out infinite; } .m-r4 { animation: mR4 18s ease-in-out infinite; }
-  .m-p1 { animation: mP1 18s ease-in-out infinite; } .m-p2 { animation: mP2 18s ease-in-out infinite; } .m-p3 { animation: mP3 18s ease-in-out infinite; }
-  .m-ao { animation: mAo 18s ease-in-out infinite; } .m-an { animation: mAn 18s ease-in-out infinite; }
-  .m-c1 { animation: mC1 18s ease-in-out infinite; } .m-c2 { animation: mC2 18s ease-in-out infinite; }
-  .m-c3 { animation: mC3 18s ease-in-out infinite; } .m-c4 { animation: mC4 18s ease-in-out infinite; } .m-c5 { animation: mC5 18s ease-in-out infinite; }
+  .m-dec { animation: mDec 24s ease-in-out infinite; }
+  .m-do { animation: mDo 24s ease-in-out infinite; } .m-dn { animation: mDn 24s ease-in-out infinite; }
+  .m-l0 { animation: mL0 24s ease-in-out infinite; }
+  .m-old { animation: mOld 24s ease-in-out infinite; } .m-sp { animation: mSp 24s ease-in-out infinite; } .m-new { animation: mNew 24s ease-in-out infinite; }
+  .m-l1 { animation: mL1 24s ease-in-out infinite; } .m-l2 { animation: mL2 24s ease-in-out infinite; }
+  .m-l3 { animation: mL3 24s ease-in-out infinite; } .m-l4 { animation: mL4 24s ease-in-out infinite; }
+  .m-r1 { animation: mR1 24s ease-in-out infinite; } .m-r2 { animation: mR2 24s ease-in-out infinite; }
+  .m-r3 { animation: mR3 24s ease-in-out infinite; } .m-r4 { animation: mR4 24s ease-in-out infinite; }
+  .m-p1 { animation: mP1 24s ease-in-out infinite; } .m-p2 { animation: mP2 24s ease-in-out infinite; } .m-p3 { animation: mP3 24s ease-in-out infinite; }
+  .m-ao { animation: mAo 24s ease-in-out infinite; } .m-an { animation: mAn 24s ease-in-out infinite; }
+  .m-c1 { animation: mC1 24s ease-in-out infinite; } .m-c2 { animation: mC2 24s ease-in-out infinite; }
+  .m-c3 { animation: mC3 24s ease-in-out infinite; } .m-c4 { animation: mC4 24s ease-in-out infinite; } .m-c5 { animation: mC5 24s ease-in-out infinite; }
 
   @media (prefers-reduced-motion: reduce) {
     .mstage *, .mcap * { animation-delay: -15s !important; animation-play-state: paused !important; }
@@ -516,9 +517,10 @@
   @media (max-width: 640px) {
     .mstage, .bstage, .trstage { display: none; }
     .mobile-narrative { display: flex; }
+    .m-c4-br-m { display: inline; }
   }
 
-  /* Hero: loops with the 18s cycle, cards build up then reset together. */
+  /* Hero: loops with the 24s cycle, cards build up then reset together. */
   @keyframes mh1 { 0%,0%{opacity:0;transform:translateY(8px)} 4%,88%{opacity:1;transform:translateY(0)} 92%,100%{opacity:0;transform:translateY(0)} }
   @keyframes mh2 { 0%,12%{opacity:0;transform:translateY(8px)} 16%,88%{opacity:1;transform:translateY(0)} 92%,100%{opacity:0;transform:translateY(0)} }
   @keyframes mh3 { 0%,24%{opacity:0;transform:translateY(8px)} 28%,88%{opacity:1;transform:translateY(0)} 92%,100%{opacity:0;transform:translateY(0)} }
@@ -527,9 +529,9 @@
   @keyframes mh6 { 0%,60%{opacity:0;transform:translateY(8px)} 64%,88%{opacity:1;transform:translateY(0)} 92%,100%{opacity:0;transform:translateY(0)} }
   @keyframes mh7 { 0%,72%{opacity:0;transform:translateY(8px)} 76%,88%{opacity:1;transform:translateY(0)} 92%,100%{opacity:0;transform:translateY(0)} }
   @keyframes mhBand { 0%,8%{opacity:0;transform:translateY(8px)} 12%,88%{opacity:1;transform:translateY(0)} 92%,100%{opacity:0;transform:translateY(0)} }
-  .mh1{animation:mh1 18s ease-in-out infinite}.mh2{animation:mh2 18s ease-in-out infinite}.mh3{animation:mh3 18s ease-in-out infinite}
-  .mh4{animation:mh4 18s ease-in-out infinite}.mh5{animation:mh5 18s ease-in-out infinite}.mh6{animation:mh6 18s ease-in-out infinite}
-  .mh7{animation:mh7 18s ease-in-out infinite}.mhBand{animation:mhBand 18s ease-in-out infinite;opacity:0;transform:translateY(8px)}
+  .mh1{animation:mh1 24s ease-in-out infinite}.mh2{animation:mh2 24s ease-in-out infinite}.mh3{animation:mh3 24s ease-in-out infinite}
+  .mh4{animation:mh4 24s ease-in-out infinite}.mh5{animation:mh5 24s ease-in-out infinite}.mh6{animation:mh6 24s ease-in-out infinite}
+  .mh7{animation:mh7 24s ease-in-out infinite}.mhBand{animation:mhBand 24s ease-in-out infinite;opacity:0;transform:translateY(8px)}
 
   /* Old-version-vs-current-version callout, reused on the Hero and Impact mobile narratives. */
   .ichip-superseded { border-style: dashed; color: var(--muted); }
@@ -661,10 +663,10 @@
         <span class="m-c1">A decision is made.</span>
         <span class="m-c2">The layer updates. The old version is set aside.</span>
         <span class="m-c3">Arthos shows what else needs to change.</span>
-        <span class="m-c4">Weeks later, your AI answers from Arthos.</span>
+        <span class="m-c4">Before the outdated<br class="m-c4-br-m"> documents are fixed,<br>your AI can already give<br class="m-c4-br-m"> customers the right answer.</span>
         <span class="m-c5">One decision. The layer updates. Everything that depends on it follows.</span>
       </div>
-      <div class="mstage" role="img" aria-label="Animation: a January 15 security review decision flows into the Arthos trusted knowledge layer. The old policy is set aside outside the layer. Arthos suggests an update, notifies an owner, and flags a page. In March, the AI sales assistant answers a customer from Arthos.">
+      <div class="mstage" role="img" aria-label="Animation: a January 15 security review decision flows into the Arthos trusted knowledge layer. The old policy is set aside outside the layer. Arthos suggests an update, notifies an owner, and flags a page. In March, before the outdated documents are fixed, the AI sales assistant gives a customer the current answer from Arthos.">
         <svg aria-hidden="true" viewBox="0 0 160 80" style="position: absolute; inset: 0; width: 100%; height: 100%">
           <path class="ml m-l0" pathLength="1" d="M40 32 H52" fill="none" stroke="#D9530B" stroke-width="0.5" stroke-linecap="round"></path>
           <path class="ml m-l1" pathLength="1" d="M108 32 H111 Q115 32 115 28 V14 Q115 10 119 10 H119" fill="none" stroke="#1F5FD1" stroke-width="0.45" stroke-linecap="round"></path>
@@ -692,12 +694,12 @@
         <div class="mc mr m-r2" style="left: 86.25%; top: 32.50%"><span class="mpill m-p2">Owner notified: Legal</span><span class="tag">Legal</span>Contract template</div>
         <div class="mc mr m-r3" style="left: 86.25%; top: 52.50%"><span class="mpill m-p3">Flagged: still says 90 days</span><span class="tag">Website</span>Trust page</div>
         <div class="mc m-r4" style="left: 86.25%; top: 80.00%; width: 26%; min-height: 7.6em">
-          <span class="tag stk"><span class="m-ao">AI sales assistant</span><span class="m-an" style="color: var(--acted)">AI sales assistant &middot; Mar 12 &middot; From Arthos</span></span>
+          <span class="tag stk"><span class="m-ao">AI sales assistant</span><span class="m-an" style="color: var(--acted)">AI sales assistant &middot; Mar 12<br>From Arthos &middot; Current as of Jan 15</span></span>
           <span class="stk"><span class="m-ao" style="color: var(--muted)">Waiting for a question</span><span class="m-an"><span style="color: var(--body-text)">&ldquo;How long do you keep our data after we cancel?&rdquo;</span><br><strong>&ldquo;We keep it for 30 days after you cancel.&rdquo;</strong></span></span>
         </div>
       </div>
 
-      <div class="mobile-narrative" role="img" aria-label="A January 15 security review decision flows into the Arthos trusted knowledge layer. The old policy is set aside outside the layer. Arthos suggests an update, notifies an owner, and flags a page. In March, the AI sales assistant answers a customer from Arthos.">
+      <div class="mobile-narrative" role="img" aria-label="A January 15 security review decision flows into the Arthos trusted knowledge layer. The old policy is set aside outside the layer. Arthos suggests an update, notifies an owner, and flags a page. In March, before the outdated documents are fixed, the AI sales assistant gives a customer the current answer from Arthos.">
         <div class="ichip mh1"><span class="tag">Jan 15 &middot; Decision</span>Security review: keep customer data 30 days for accounts cancelled after Mar&nbsp;1.</div>
         <div class="mobile-layer-band mhBand">
           <div class="band-label">Arthos &middot; Trusted knowledge layer</div>
