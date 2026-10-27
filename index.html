@@ -26,6 +26,7 @@
     <meta name="twitter:image" content="https://arthos.ai/assets/og.png">
 
     <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
 
     <!-- Preconnect for Google Fonts -->
@@ -90,11 +91,8 @@
     flex-wrap: wrap;
   }
 
-  .nav-brand {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-  }
+  .nav-brand { display: inline-flex; align-items: center; }
+  .nav-brand img { display: block; height: 24px; width: auto; }
 
   .nav-links {
     display: flex;
@@ -609,8 +607,9 @@
     margin: 0 auto;
   }
 
-  .foot-left { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-  .foot-brand { font-weight: 700; color: var(--ink); }
+  .foot-left { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .foot-brand { display: inline-flex; align-items: center; }
+  .foot-brand img { display: block; height: 18px; width: auto; }
   .foot-links { display: flex; gap: 20px; flex-wrap: wrap; }
   .foot-links a { color: var(--muted); }
 
@@ -638,7 +637,7 @@
 
 <nav class="site-nav">
   <div class="wrap">
-    <a class="nav-brand" href="/" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Arthos</a>
+    <a class="nav-brand" href="/" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><img src="/assets/arthos-wordmark.svg" alt="Arthos"></a>
     <div class="nav-links">
       <a href="/about.html">Team</a>
       <a class="nav-cta" href="/contact.html">Talk to the team</a>
@@ -992,7 +991,7 @@
 
 <footer class="site-foot" id="company">
   <span class="foot-left">
-    <span class="foot-brand">Arthos</span>
+    <span class="foot-brand"><img src="/assets/arthos-wordmark.svg" alt="Arthos"></span>
     <span class="foot-copy">&copy; Arthos AI, Inc. <span id="copy-year"></span></span>
   </span>
   <span class="foot-links">

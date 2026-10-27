@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy | Arthos AI</title>
     <meta name="robots" content="noindex">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +19,8 @@
   .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
   nav.site-nav { border-bottom: 1px solid var(--border); }
   .site-nav .wrap { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; gap: 16px; flex-wrap: wrap; }
-  .nav-brand { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; text-decoration: none; }
+  .nav-brand { display: inline-flex; align-items: center; text-decoration: none; }
+  .nav-brand img { display: block; height: 24px; width: auto; }
   .nav-links { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; font-size: 15px; }
   .nav-links a { text-decoration: none; }
   .nav-cta { background: var(--ink); color: #FFFFFF !important; padding: 12px 18px; border-radius: 8px; font-weight: 600; }
@@ -31,8 +33,9 @@
   .updated { font-size: 14px; color: var(--muted); margin: 0 0 40px; }
   .scope-note { background: #F6F7F9; border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin: 0 0 40px; font-size: 15px; line-height: 1.6; color: var(--muted); }
   footer.site-foot { border-top: 1px solid var(--border); padding: 40px 24px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 14px; color: var(--muted); max-width: 1200px; margin: 0 auto; }
-  .foot-left { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-  .foot-brand { font-weight: 700; color: var(--ink); text-decoration: none; }
+  .foot-left { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .foot-brand { display: inline-flex; align-items: center; text-decoration: none; }
+  .foot-brand img { display: block; height: 18px; width: auto; }
   .foot-copy { color: var(--muted); }
   .foot-links { display: flex; gap: 20px; flex-wrap: wrap; }
   .foot-links a { color: var(--muted); text-decoration: none; }
@@ -42,7 +45,7 @@
 
 <nav class="site-nav">
   <div class="wrap">
-    <a class="nav-brand" href="/">Arthos</a>
+    <a class="nav-brand" href="/"><img src="/assets/arthos-wordmark.svg" alt="Arthos"></a>
     <div class="nav-links">
       <a href="/about.html">Team</a>
       <a class="nav-cta" href="/contact.html">Talk to the team</a>
@@ -85,7 +88,7 @@
 
 <footer class="site-foot">
   <span class="foot-left">
-    <a class="foot-brand" href="/">Arthos</a>
+    <a class="foot-brand" href="/"><img src="/assets/arthos-wordmark.svg" alt="Arthos"></a>
     <span class="foot-copy">&copy; Arthos AI, Inc. <span id="copy-year"></span></span>
   </span>
   <span class="foot-links">

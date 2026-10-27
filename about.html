@@ -26,6 +26,7 @@
     <meta name="twitter:image" content="https://arthos.ai/assets/og.png">
 
     <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
 
     <!-- Preconnect for Google Fonts -->
@@ -59,7 +60,8 @@
 
   nav.site-nav { border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 20; background: var(--bg); }
   .site-nav .wrap { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; gap: 16px; flex-wrap: wrap; }
-  .nav-brand { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
+  .nav-brand { display: inline-flex; align-items: center; }
+  .nav-brand img { display: block; height: 24px; width: auto; }
   .nav-links { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; font-size: 15px; }
   .nav-current { font-weight: 600; }
   .nav-cta { background: var(--ink); color: #FFFFFF !important; padding: 12px 18px; border-radius: 8px; font-weight: 600; }
@@ -105,8 +107,9 @@
   .cta-band h2 { margin: 0; font-size: clamp(32px, 4.4vw, 56px); line-height: 1.05; letter-spacing: -0.035em; font-weight: 600; text-wrap: balance; }
 
   footer.site-foot { padding: 40px 24px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 14px; color: var(--muted); max-width: 1200px; margin: 0 auto; }
-  .foot-left { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-  .foot-brand { font-weight: 700; color: var(--ink); }
+  .foot-left { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .foot-brand { display: inline-flex; align-items: center; }
+  .foot-brand img { display: block; height: 18px; width: auto; }
   .foot-links { display: flex; gap: 20px; flex-wrap: wrap; }
   .foot-links a { color: var(--muted); }
 
@@ -133,7 +136,7 @@
 
 <nav class="site-nav">
   <div class="wrap">
-    <a class="nav-brand" href="/">Arthos</a>
+    <a class="nav-brand" href="/"><img src="/assets/arthos-wordmark.svg" alt="Arthos"></a>
     <div class="nav-links">
       <a href="/about.html" class="nav-current" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Team</a>
       <a class="nav-cta" href="/contact.html">Talk to the team</a>
@@ -230,7 +233,7 @@
 
 <footer class="site-foot">
   <span class="foot-left">
-    <span class="foot-brand">Arthos</span>
+    <span class="foot-brand"><img src="/assets/arthos-wordmark.svg" alt="Arthos"></span>
     <span class="foot-copy">&copy; Arthos AI, Inc. <span id="copy-year"></span></span>
   </span>
   <span class="foot-links">
