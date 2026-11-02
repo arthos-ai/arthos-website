@@ -132,6 +132,14 @@
   .btn-light { background: #FFFFFF; color: var(--ink) !important; }
   .btn-light:hover { opacity: 0.9; color: var(--ink) !important; }
 
+  /* --- explainer video pop-up --- */
+  .vid-overlay { position: fixed; inset: 0; background: rgba(17,20,24,.78); display: none; align-items: center; justify-content: center; padding: 16px; z-index: 1000; }
+  .vid-overlay.open { display: flex; }
+  .vid-box { position: relative; width: min(960px,100%); }
+  .vid-frame { aspect-ratio: 16/9; border-radius: 14px; overflow: hidden; background: #000; }
+  .vid-frame iframe { width: 100%; height: 100%; border: 0; }
+  .vid-close { position: absolute; top: -44px; right: 0; width: 36px; height: 36px; border-radius: 50%; border: 0; background: rgba(255,255,255,.15); color: #FFFFFF; font-size: 20px; cursor: pointer; }
+
   /* --- hero --- */
   .hero { padding: 88px 0 64px; }
   .hero-copy { max-width: 820px; }
@@ -652,7 +660,7 @@
       <p class="hero-sub">Arthos works alongside your tools to build a trusted knowledge layer. Your organization and your AI get answers you can rely on, so you can move fast with confidence.</p>
       <div class="hero-ctas">
         <a class="btn btn-dark" href="/contact.html">Talk to the team</a>
-        <a class="btn btn-outline" href="#how">See how it works</a>
+        <button class="btn btn-outline" id="watch-video-btn" type="button">&#9654; See how it works (2 min)</button>
       </div>
       <p class="hero-founders">We've led AI, engineering, and product teams at one of the world's most valuable companies. Now we're rethinking how organizations work with their knowledge.</p>
     </div>
@@ -1036,6 +1044,36 @@
   })();
 </script>
 <script>document.getElementById('copy-year').textContent = new Date().getFullYear();</script>
+
+<div class="vid-overlay" id="vid-overlay" role="dialog" aria-modal="true" aria-label="Arthos overview video">
+  <div class="vid-box">
+    <button class="vid-close" id="vid-close" aria-label="Close video">&times;</button>
+    <div class="vid-frame" id="vid-frame"></div>
+  </div>
+</div>
+<script>
+  (function () {
+    var VIDEO_ID = 'eTjV9mJr7Lw';
+    var btn = document.getElementById('watch-video-btn');
+    var overlay = document.getElementById('vid-overlay');
+    var frame = document.getElementById('vid-frame');
+    var closeBtn = document.getElementById('vid-close');
+
+    function openVid() {
+      frame.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + VIDEO_ID + '?autoplay=1&rel=0&cc_load_policy=0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen title="Arthos overview"></iframe>';
+      overlay.classList.add('open');
+    }
+    function closeVid() {
+      frame.innerHTML = '';
+      overlay.classList.remove('open');
+    }
+
+    btn.addEventListener('click', openVid);
+    closeBtn.addEventListener('click', closeVid);
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) { closeVid(); } });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && overlay.classList.contains('open')) { closeVid(); } });
+  })();
+</script>
 
 </body>
 </html>
