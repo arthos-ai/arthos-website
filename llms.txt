@@ -1,0 +1,29 @@
+# Arthos AI
+
+> Arthos AI builds a trusted knowledge layer that extracts, connects, and keeps correct the fragmented operational knowledge that enterprise teams and AI systems depend on.
+
+## What Arthos does
+
+Every organization runs on decisions, policies, and specs that change constantly. When one changes, the update gets recorded in one place while the old version stays in circulation everywhere else, and nothing records what else depended on it. Arthos sits on top of the tools a company already uses, extracts the facts inside them, and keeps checking as things change. It flags where sources disagree, shows what else has to change, and gives teams and AI systems one place to get the current answer, with the source behind every fact.
+
+Arthos connects to the tools a team already uses (documents, wikis, tickets, and other systems) without migrating or replacing them, and runs continuously in four steps:
+
+1. **Extract** — pulls individual facts out of existing sources, each linked back to where it came from and when it was recorded.
+2. **Connect** — maps how those facts relate to and depend on one another, so a change in one place can be traced to everything built on top of it.
+3. **Check** — as sources change, shows what else is now out of date, or where two sources disagree, with the team deciding what's correct.
+4. **Publish** — makes the current, sourced knowledge available to both teams and AI tools, so every answer — human or AI-generated — reflects the same up-to-date fact.
+
+## Who it's for
+
+Organizations that need their teams and their AI to work from the same current facts. Internal teams use Arthos to keep their knowledge current as policies and decisions change. Customer-facing teams, and AI tools like chatbots, AI agents, sales assistants, and internal copilots, work from those same facts, so customers get the current answer.
+
+## Team
+
+Founded by former AI, product, and engineering leaders from one of the world's largest companies, who saw the same knowledge-drift problem recur across support organizations, AI products, and productivity initiatives.
+
+## Pages
+
+- [Home](https://arthos.ai/): The problem of knowledge drift and what Arthos does about it.
+- [How It Works](https://arthos.ai/how-it-works.html): The Extract → Connect → Check → Publish process, with a worked example of one policy change propagating to FAQs, contracts, and an AI chatbot.
+- [About](https://arthos.ai/about.html): Founding story and team backgrounds.
+- [Contact](https://arthos.ai/contact.html): Get in touch with the Arthos team.
