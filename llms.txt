@@ -27,3 +27,7 @@ Founded by former AI, product, and engineering leaders from one of the world's l
 - [How It Works](https://arthos.ai/how-it-works.html): The Extract → Connect → Check → Publish process, with a worked example of one policy change propagating to FAQs, contracts, and an AI chatbot.
 - [About](https://arthos.ai/about.html): Founding story and team backgrounds.
 - [Contact](https://arthos.ai/contact.html): Get in touch with the Arthos team.
+
+## Videos
+
+- [Facts you can trust (1 min)](https://arthos.ai/videos/facts-you-can-trust.mp4): How Arthos keeps one current answer when a policy changes.
