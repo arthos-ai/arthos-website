@@ -72,8 +72,9 @@ The contact form (`contact.html`) posts to a live Formspree endpoint (`https://f
 - **Meta tags**: update the Open Graph/Twitter/description tags in each page's `<head>` — each page has its own.
 
 ### Navigation
-- Nav and footer links are relative paths (`/`, `/how-it-works.html`, `/about.html`, `/contact.html`) repeated on all four pages — update all four when adding/removing/renaming a page.
+- Nav and footer links are relative paths repeated on every page (there's no shared header/footer component — each page is a standalone static file) — update every page when adding/removing/renaming a page.
 - The current page's own nav link needs a real `href` to itself plus an `onclick="window.scrollTo(...); return false;"` handler (see STYLE_GUIDE.md — a same-URL `href` alone is a no-op in most browsers).
+- After any nav/footer change, run `python3 scripts/check_nav_footer.py` before deploying — it flags any page whose nav or footer links don't match the rest (`how-it-works.html` is intentionally excluded; see the comment in the script).
 
 ## Browser Support
 
