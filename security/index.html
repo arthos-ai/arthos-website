@@ -113,6 +113,7 @@
   @media (max-width: 720px) {
     .sec-toc { position: static; flex: 1 1 100%; }
   }
+  #scroll-spacer { height: 0; }
 </style>
 </head>
 <body>
@@ -253,6 +254,40 @@
   </div>
 </footer>
 
+<div id="scroll-spacer" aria-hidden="true"></div>
+
 <script>document.getElementById('copy-year').textContent = new Date().getFullYear();</script>
+<script>
+  (function () {
+    var spacer = document.getElementById('scroll-spacer');
+
+    function jumpTo(id) {
+      var el = document.getElementById(id);
+      if (!el) { return; }
+      spacer.style.height = '0px';
+      var scrollMarginTop = parseFloat(getComputedStyle(el).scrollMarginTop) || 0;
+      var targetY = el.getBoundingClientRect().top + window.pageYOffset - scrollMarginTop;
+      var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      if (targetY > maxScroll) {
+        spacer.style.height = (targetY - maxScroll) + 'px';
+      }
+      window.scrollTo(0, Math.max(0, targetY));
+    }
+
+    document.querySelectorAll('.sec-toc a[href^="#"]').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        var id = link.getAttribute('href').slice(1);
+        jumpTo(id);
+        history.pushState(null, '', '#' + id);
+      });
+    });
+
+    if (location.hash) {
+      jumpTo(location.hash.slice(1));
+      window.addEventListener('load', function () { jumpTo(location.hash.slice(1)); });
+    }
+  })();
+</script>
 </body>
 </html>
