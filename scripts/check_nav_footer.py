@@ -35,6 +35,7 @@ PAGES = [
     "privacy/index.html",
     "security/index.html",
     "subprocessors/index.html",
+    "404.html",
 ]
 
 NAV_BLOCK_RE = re.compile(r'<div class="nav-links">(.*?)</div>', re.S)
